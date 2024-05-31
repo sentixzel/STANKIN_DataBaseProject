@@ -9,51 +9,51 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Bank
 build_property.RootNamespace = Bank
-build_property.ProjectDir = C:\Users\Arina\source\repos\Bank\Bank\
+build_property.ProjectDir = C:\Users\Arina\OneDrive\Документы\GitHub\STANKIN_DataBaseProject\Bank\Bank\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Arina\source\repos\Bank\Bank
+build_property.MSBuildProjectDirectory = C:\Users\Arina\OneDrive\Документы\GitHub\STANKIN_DataBaseProject\Bank\Bank
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Arina/source/repos/Bank/Bank/Views/Contacts/Index.cshtml]
+[C:/Users/Arina/OneDrive/Документы/GitHub/STANKIN_DataBaseProject/Bank/Bank/Views/Contacts/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Arina/source/repos/Bank/Bank/Views/Contacts/ThankYou.cshtml]
+[C:/Users/Arina/OneDrive/Документы/GitHub/STANKIN_DataBaseProject/Bank/Bank/Views/Contacts/ThankYou.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdHNcVGhhbmtZb3UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Arina/source/repos/Bank/Bank/Views/Home/Index.cshtml]
+[C:/Users/Arina/OneDrive/Документы/GitHub/STANKIN_DataBaseProject/Bank/Bank/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Arina/source/repos/Bank/Bank/Views/Home/PrivacyPolicy.cshtml]
+[C:/Users/Arina/OneDrive/Документы/GitHub/STANKIN_DataBaseProject/Bank/Bank/Views/Home/PrivacyPolicy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5UG9saWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Arina/source/repos/Bank/Bank/Views/Home/Uslov.cshtml]
+[C:/Users/Arina/OneDrive/Документы/GitHub/STANKIN_DataBaseProject/Bank/Bank/Views/Home/Uslov.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxVc2xvdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Arina/source/repos/Bank/Bank/Views/Shared/Error.cshtml]
+[C:/Users/Arina/OneDrive/Документы/GitHub/STANKIN_DataBaseProject/Bank/Bank/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Arina/source/repos/Bank/Bank/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Arina/OneDrive/Документы/GitHub/STANKIN_DataBaseProject/Bank/Bank/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Arina/source/repos/Bank/Bank/Views/_ViewImports.cshtml]
+[C:/Users/Arina/OneDrive/Документы/GitHub/STANKIN_DataBaseProject/Bank/Bank/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Arina/source/repos/Bank/Bank/Views/_ViewStart.cshtml]
+[C:/Users/Arina/OneDrive/Документы/GitHub/STANKIN_DataBaseProject/Bank/Bank/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Arina/source/repos/Bank/Bank/Views/Shared/_Layout.cshtml]
+[C:/Users/Arina/OneDrive/Документы/GitHub/STANKIN_DataBaseProject/Bank/Bank/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-5xahe45y3j
