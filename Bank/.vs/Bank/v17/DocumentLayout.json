@@ -3,28 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|c:\\users\\arina\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\stankin_databaseproject\\bank\\bank\\models\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\models\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|c:\\users\\arina\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\stankin_databaseproject\\bank\\bank\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|c:\\users\\arina\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\stankin_databaseproject\\bank\\bank\\views\\contacts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\views\\contacts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|c:\\users\\arina\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\stankin_databaseproject\\bank\\bank\\wwwroot\\css\\stylehome.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\wwwroot\\css\\stylehome.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|c:\\users\\arina\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\stankin_databaseproject\\bank\\bank\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\bank\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|c:\\users\\arina\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\stankin_databaseproject\\bank\\bank\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\bank\\views\\contacts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\views\\contacts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\bank\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\bank\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\bank\\models\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\models\\contact.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\bank\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\bank\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\bank\\wwwroot\\css\\stylehome.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\wwwroot\\css\\stylehome.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,6 +51,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Bank\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Bank\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-31T21:22:45.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Bank\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Bank\\Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-31T21:22:38.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Bank\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Bank\\Views\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-31T21:22:31.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Contact.cs",
               "DocumentMoniker": "C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Models\\Contact.cs",
               "RelativeDocumentMoniker": "Bank\\Models\\Contact.cs",
@@ -46,12 +95,11 @@
               "RelativeToolTip": "Bank\\Models\\Contact.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T21:08:23.388Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T21:08:23.388Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "Bank\\wwwroot\\css\\site.css",
@@ -59,12 +107,11 @@
               "RelativeToolTip": "Bank\\wwwroot\\css\\site.css",
               "ViewState": "AQIAAIEAAAAAAAAAAAAAAJMAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-31T21:05:08.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T21:05:08.103Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "StyleHome.css",
               "DocumentMoniker": "C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\css\\StyleHome.css",
               "RelativeDocumentMoniker": "Bank\\wwwroot\\css\\StyleHome.css",
@@ -72,8 +119,7 @@
               "RelativeToolTip": "Bank\\wwwroot\\css\\StyleHome.css",
               "ViewState": "AQIAACEAAAAAAAAAAAAAADUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-05-31T21:05:02.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T21:05:02.034Z"
             },
             {
               "$type": "Document",
@@ -85,34 +131,31 @@
               "RelativeToolTip": "Bank\\Views\\Contacts\\Index.cshtml",
               "ViewState": "AQIAABgAAAAAAAAAAAAAACUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-31T21:03:40.588Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T21:03:40.588Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "ContactsController.cs",
               "DocumentMoniker": "C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Controllers\\ContactsController.cs",
               "RelativeDocumentMoniker": "Bank\\Controllers\\ContactsController.cs",
               "ToolTip": "C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Controllers\\ContactsController.cs",
               "RelativeToolTip": "Bank\\Controllers\\ContactsController.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAuwDYAAAAxAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAuwDYAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T20:54:35.332Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T20:54:35.332Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Bank\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Bank\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAA5wBsAAAAgAAAA",
+              "ViewState": "AQIAABAAAAAAAAAAAAAgwBsAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-31T14:40:10.977Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-31T14:40:10.977Z"
             }
           ]
         }
