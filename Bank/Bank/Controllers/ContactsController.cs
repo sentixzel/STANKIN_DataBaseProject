@@ -52,8 +52,26 @@ namespace Bank.Controllers
                         mailMessage.From = new MailAddress(smtpUsername);
                         mailMessage.To.Add("venesken@mail.ru"); // Укажите адрес получателя
                         mailMessage.Subject = "Обратная связь";
-                        mailMessage.Body = $":Имя {contact.Name} \r\n Фамилия: {contact.Surname}\r\n Почта: {contact.Email}\r\n Телефон: {contact.Phone}\r\n Адрес: {contact.Address}\r\n Сообщение: {contact.Message}  ";
+                        mailMessage.Body = $"Имя: {contact.Name} \r\n Фамилия: {contact.Surname}\r\n Почта: {contact.Email}\r\n Телефон: {contact.Phone}\r\n Адрес: {contact.Address}\r\n Сообщение: {contact.Message}  ";
 
+                        try
+                        {
+                            // Отправляем сообщение
+                            smtpClient.Send(mailMessage);
+                            Console.WriteLine("Сообщение успешно отправлено.");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine($"Ошибка отправки сообщения: {ex.Message}");
+                        }
+                    }
+                    using (MailMessage mailMessage = new MailMessage())
+                    {
+                        mailMessage.From = new MailAddress(smtpUsername);
+                        mailMessage.To.Add($"{contact.Email}"); // Укажите адрес получателя
+                        mailMessage.Subject = "Обратная связь";
+                        mailMessage.Body = $"Здравствуйте {contact.Name}, спасибо, что обратились в службу поддержки, ваше сообщение получено,\n ближайший свободный оператор ответит вам, а пока проверьте правильность введенных данных\n Имя {contact.Name} \r\n Фамилия: {contact.Surname}\r\n Почта: {contact.Email}\r\n Телефон: {contact.Phone}\r\n Адрес: {contact.Address}";
+                        
                         try
                         {
                             // Отправляем сообщение

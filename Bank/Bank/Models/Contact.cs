@@ -29,7 +29,7 @@ namespace Bank.Models
        
         [Display(Name = "Что вы хотите спросить? Напишите :)")]
         [Required(ErrorMessage = "Обязательно введите вопрос")]
-        [StringLength(300, ErrorMessage="Превышено количество символов >300")]
+        [StringLength(6000, ErrorMessage="Превышено количество символов >6000")]
         public string Message {  get; set; }
 
     }
