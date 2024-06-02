@@ -1,14 +1,30 @@
-﻿@{
+﻿@model IEnumerable<ОтделениеБанка>
+@{
     ViewData["Title"] = "Главная страница сайта";
 }
 
-<h1>Добро пожаловать</h1>
+
+@foreach (var отделение in Model)
+{
+    <tr>
+        <td>@отделение.ID_Отделения</td>
+        <td>@отделение.НазваниеОтделения</td>
+        <td>@отделение.Адрес</td>
+        <td>@отделение.НомерТелефона</td>
+    </tr>
+}
+
 
 <link rel="stylesheet" href="~/css/StyleHome.css" asp-append-version="true" />
 <h1>Вас приветствуют</h1>
+
+
 
 <div class="container">
     <a href="https://vk.com/orangelos"><img src="img/andrew.jpg" alt="Andrew"></a>
     <a href="https://vk.com/sgvvv"><img src="img/malika.jpg" alt="Malika"></a>
     <a href="https://vk.com/aazelenov"><img src="img/Anton.jpg" alt="Anton"></a>
 </div>
+
+
+

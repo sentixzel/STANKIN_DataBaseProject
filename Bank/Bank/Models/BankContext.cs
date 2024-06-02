@@ -12,7 +12,7 @@ namespace Bank.Models
 		{
 			if (!optionsBuilder.IsConfigured)
 			{
-				optionsBuilder.UseSqlServer("Data Source=LIKUXINDELL;Initial Catalog=BankBD;User ID=dlyaconnecta;Password=lalalalalalala7;")
+				optionsBuilder.UseSqlServer("Data Source=;Initial Catalog=BankBD;User ID=dlyaconnecta;Password=lalalalalalala7;")
 					.LogTo(Console.WriteLine, LogLevel.Information);
 			}
 		}
