@@ -8,14 +8,7 @@ namespace Bank.Models
 		{
 		}
 
-		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		{
-			if (!optionsBuilder.IsConfigured)
-			{
-				optionsBuilder.UseSqlServer("Data Source=;Initial Catalog=BankBD;User ID=dlyaconnecta;Password=lalalalalalala7;")
-					.LogTo(Console.WriteLine, LogLevel.Information);
-			}
-		}
+		
 
 		public DbSet<Клиент> Клиенты { get; set; }
 		public DbSet<Счет> Счета { get; set; }

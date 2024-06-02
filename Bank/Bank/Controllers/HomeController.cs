@@ -12,7 +12,6 @@ namespace Bank.Controllers
     public class HomeController : Controller
     {
 
-
         private readonly BankContext _context;
 
         public HomeController(BankContext context)
@@ -20,20 +19,16 @@ namespace Bank.Controllers
             _context = context;
         }
 
-        public IActionResult Index()
+        // GET: ОтделенияБанков
+        public async Task<IActionResult> Index()
         {
-            var отделенияБанка = _context.ОтделенияБанков.ToList();
-            var отделенияБанкаViewModel = отделенияБанка.Select(o => new ОтделениеБанка
-            {
-                ID_Отделения = o.ID_Отделения,
-                НазваниеОтделения = o.НазваниеОтделения,
-                Адрес = o.Адрес,
-                НомерТелефона = o.НомерТелефона,
-               
-            }).ToList();
-
-            return View(отделенияБанкаViewModel);
+            var отделенияБанков = await _context.ОтделенияБанков.ToListAsync();
+            return View(отделенияБанков);
         }
+
+
+
+    }
 
 
 
@@ -59,6 +54,6 @@ namespace Bank.Controllers
        // }
        //
     }
-}
+
       
 
