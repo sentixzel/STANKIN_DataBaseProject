@@ -11,8 +11,6 @@ namespace Bank.Models
         [Required(ErrorMessage = "Имя обязательно для ввода")]
         [StringLength(50, ErrorMessage = "Имя не должно превышать 50 символов")]
 
-
-
         public string Имя { get; set; }
         [Required(ErrorMessage = "Фамилия обязательна для ввода")]
         [StringLength(50, ErrorMessage = "Фамилия не должна превышать 50 символов")]
@@ -22,7 +20,7 @@ namespace Bank.Models
         public string Фамилия { get; set; }
         [Required(ErrorMessage = "Дата рождения обязательна для ввода")]
         [DataType(DataType.Date, ErrorMessage = "Введите корректную дату")]
-       [Display(Name = "Дата рождения")]
+        [Display(Name = "Дата рождения")]
         public DateTime ДатаРождения { get; set; }
 
 
@@ -33,6 +31,7 @@ namespace Bank.Models
         public string ЭлектроннаяПочта { get; set; }
 
         [Required(ErrorMessage = "Пароль обязателен для заполнения.")]
+        [MinLength(6, ErrorMessage = "Пароль должен состоять как минимум из 6 символов.")]
         [DataType(DataType.Password)]
         public string Пароль { get; set; }
 

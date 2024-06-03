@@ -26,15 +26,6 @@ namespace Bank.Controllers
         {
             if (ModelState.IsValid)
             {
-
-
-
-
-
-
-
-
-
                 string smtpServer = "smtp.mail.ru";
                 int smtpPort = 587; // Обычно используется порт 587 для TLS
                 string smtpUsername = "arina_andrey2004@mail.ru";
@@ -84,23 +75,6 @@ namespace Bank.Controllers
                         }
                     }
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 return RedirectToAction("ThankYou");
             }
             return View("Index");
