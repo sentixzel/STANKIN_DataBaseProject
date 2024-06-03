@@ -160,7 +160,7 @@ namespace Bank.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID_Сотрудника"));
 
-                    b.Property<int>("ID_Отделения")
+                    b.Property<int>("ID_Одленения")
                         .HasColumnType("int");
 
                     b.Property<string>("Photo")
@@ -182,9 +182,6 @@ namespace Bank.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ОтделениеID_Отделения")
-                        .HasColumnType("int");
-
                     b.Property<string>("Фамилия")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -195,7 +192,7 @@ namespace Bank.Migrations
 
                     b.HasKey("ID_Сотрудника");
 
-                    b.HasIndex("ОтделениеID_Отделения");
+                    b.HasIndex("ID_Одленения");
 
                     b.ToTable("Сотрудники");
                 });
@@ -295,13 +292,13 @@ namespace Bank.Migrations
 
             modelBuilder.Entity("Bank.Models.Сотрудник", b =>
                 {
-                    b.HasOne("Bank.Models.ОтделениеБанка", "Отделение")
-                        .WithMany()
-                        .HasForeignKey("ОтделениеID_Отделения")
+                    b.HasOne("Bank.Models.ОтделениеБанка", "ОтделениеБанка")
+                        .WithMany("Сотрудники")
+                        .HasForeignKey("ID_Одленения")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Отделение");
+                    b.Navigation("ОтделениеБанка");
                 });
 
             modelBuilder.Entity("Bank.Models.Счет", b =>
@@ -341,6 +338,8 @@ namespace Bank.Migrations
             modelBuilder.Entity("Bank.Models.ОтделениеБанка", b =>
                 {
                     b.Navigation("Клиенты");
+
+                    b.Navigation("Сотрудники");
                 });
 
             modelBuilder.Entity("Bank.Models.Счет", b =>

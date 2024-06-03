@@ -64,15 +64,14 @@ namespace Bank.Migrations
                     НомерТелефона = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ДатаНаима = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ID_Отделения = table.Column<int>(type: "int", nullable: false),
-                    ОтделениеID_Отделения = table.Column<int>(type: "int", nullable: false)
+                    ID_Одленения = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Сотрудники", x => x.ID_Сотрудника);
                     table.ForeignKey(
-                        name: "FK_Сотрудники_ОтделенияБанков_ОтделениеID_Отделения",
-                        column: x => x.ОтделениеID_Отделения,
+                        name: "FK_Сотрудники_ОтделенияБанков_ID_Одленения",
+                        column: x => x.ID_Одленения,
                         principalTable: "ОтделенияБанков",
                         principalColumn: "ID_Отделения",
                         onDelete: ReferentialAction.Cascade);
@@ -185,9 +184,9 @@ namespace Bank.Migrations
                 column: "ID_Кредита");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Сотрудники_ОтделениеID_Отделения",
+                name: "IX_Сотрудники_ID_Одленения",
                 table: "Сотрудники",
-                column: "ОтделениеID_Отделения");
+                column: "ID_Одленения");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Счета_ID_Клиента",
