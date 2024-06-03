@@ -11,7 +11,9 @@ namespace Bank.Models
 		public string Адрес { get; set; }
 		public string НомерТелефона { get; set; }
         public string? Photo { get; set; }
-        public int ID_Сотрудника { get; set; }
+
+		[ForeignKey("Сотрудник")]
+        public Сотрудник ID_Сотрудника { get; set; }
 
     }
 }

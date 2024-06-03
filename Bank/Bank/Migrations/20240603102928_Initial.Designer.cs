@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bank.Migrations
 {
     [DbContext(typeof(BankContext))]
-    [Migration("20240603072055_Initial")]
+    [Migration("20240603102928_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -107,9 +107,6 @@ namespace Bank.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID_Отделения"));
 
-                    b.Property<int>("ID_Сотрудника")
-                        .HasColumnType("int");
-
                     b.Property<string>("Photo")
                         .HasColumnType("nvarchar(max)");
 
@@ -125,7 +122,12 @@ namespace Bank.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Сотрудник")
+                        .HasColumnType("int");
+
                     b.HasKey("ID_Отделения");
+
+                    b.HasIndex("Сотрудник");
 
                     b.ToTable("ОтделенияБанков");
                 });
@@ -249,6 +251,17 @@ namespace Bank.Migrations
                     b.HasKey("ID_Транзакции");
 
                     b.ToTable("Транзакции");
+                });
+
+            modelBuilder.Entity("Bank.Models.ОтделениеБанка", b =>
+                {
+                    b.HasOne("Bank.Models.Сотрудник", "ID_Сотрудника")
+                        .WithMany()
+                        .HasForeignKey("Сотрудник")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ID_Сотрудника");
                 });
 #pragma warning restore 612, 618
         }

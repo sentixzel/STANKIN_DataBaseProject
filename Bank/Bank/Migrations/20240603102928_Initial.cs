@@ -48,23 +48,6 @@ namespace Bank.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ОтделенияБанков",
-                columns: table => new
-                {
-                    ID_Отделения = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    НазваниеОтделения = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Адрес = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    НомерТелефона = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ID_Сотрудника = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ОтделенияБанков", x => x.ID_Отделения);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ПлатежиПоКредитам",
                 columns: table => new
                 {
@@ -130,6 +113,34 @@ namespace Bank.Migrations
                 {
                     table.PrimaryKey("PK_Транзакции", x => x.ID_Транзакции);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "ОтделенияБанков",
+                columns: table => new
+                {
+                    ID_Отделения = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    НазваниеОтделения = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Адрес = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    НомерТелефона = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Сотрудник = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ОтделенияБанков", x => x.ID_Отделения);
+                    table.ForeignKey(
+                        name: "FK_ОтделенияБанков_Сотрудники_Сотрудник",
+                        column: x => x.Сотрудник,
+                        principalTable: "Сотрудники",
+                        principalColumn: "ID_Сотрудника",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ОтделенияБанков_Сотрудник",
+                table: "ОтделенияБанков",
+                column: "Сотрудник");
         }
 
         /// <inheritdoc />
@@ -148,13 +159,13 @@ namespace Bank.Migrations
                 name: "ПлатежиПоКредитам");
 
             migrationBuilder.DropTable(
-                name: "Сотрудники");
-
-            migrationBuilder.DropTable(
                 name: "Счета");
 
             migrationBuilder.DropTable(
                 name: "Транзакции");
+
+            migrationBuilder.DropTable(
+                name: "Сотрудники");
         }
     }
 }
