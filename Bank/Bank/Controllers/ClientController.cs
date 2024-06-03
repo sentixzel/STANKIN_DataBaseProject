@@ -41,10 +41,22 @@ namespace Bank.Controllers
                 _context.Клиенты.Add(клиент);
                 _context.SaveChanges();
 
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("EndRegister", "Client");
             }
 
-            return View(model);
+            return View();
         }
+
+
+        public IActionResult EndRegister()
+        {
+            return View();
+        }
+
+
+
     }
+
+
+
 }

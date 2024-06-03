@@ -22,8 +22,8 @@ h1 {
         position: relative;
         margin: 10px;
         display: block;
-        width: 700px; /* Увеличенный размер */
-        height: 400px; /* Увеличенный размер */
+        width: 8000px; /* Увеличенный размер */
+        height: 600px; /* Увеличенный размер */
         overflow: hidden;
         transition: transform 0.3s ease;
         text-decoration: none;
@@ -65,9 +65,16 @@ h1 {
         z-index: 2; /* Для гарантии, что текст всегда сверху */
     }
 
-    .overlay h2, .overlay p {
+    .overlay h2 {
         margin: 0;
         line-height: 1.2;
+        font-size: 2.5em; /* Увеличенный размер текста */
+    }
+
+    .overlay p {
+        margin: 0;
+        line-height: 1.2;
+        font-size: 1.5em; /* Увеличенный размер текста */
     }
 
 /* Адаптивный дизайн */
@@ -76,10 +83,26 @@ h1 {
         width: 90%; /* Произвольно выбранный размер для мобильных устройств */
         height: auto;
     }
+
+    .overlay h2 {
+        font-size: 2em; /* Уменьшенный размер текста для мобильных устройств */
+    }
+
+    .overlay p {
+        font-size: 1.2em; /* Уменьшенный размер текста для мобильных устройств */
+    }
 }
 
 @media (max-width: 480px) {
     .container .branch {
         width: 100%;
+    }
+
+    .overlay h2 {
+        font-size: 1.8em; /* Уменьшенный размер текста для маленьких экранов */
+    }
+
+    .overlay p {
+        font-size: 1em; /* Уменьшенный размер текста для маленьких экранов */
     }
 }

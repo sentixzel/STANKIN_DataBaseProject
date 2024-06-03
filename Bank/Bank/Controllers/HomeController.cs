@@ -26,6 +26,16 @@ namespace Bank.Controllers
             return View(отделенияБанков);
         }
 
+        public IActionResult PrivacyPolicy()
+        {
+            return View();
+        }
+
+        public IActionResult Uslov()
+        {
+            return View();
+        }
+
 
 
     }
@@ -39,21 +49,21 @@ namespace Bank.Controllers
 
 
 
-       // private readonly ILogger<HomeController> _logger;
-       //
-       // public HomeController(ILogger<HomeController> logger)
-       // {
-       //     _logger = logger;
-       // }
-       //
-       // public IActionResult Index()
-       // {
-       //     
-       //
-       //     return View();
-       // }
-       //
-    }
+    // private readonly ILogger<HomeController> _logger;
+    //
+    // public HomeController(ILogger<HomeController> logger)
+    // {
+    //     _logger = logger;
+    // }
+    //
+    // public IActionResult Index()
+    // {
+    //     
+    //
+    //     return View();
+    // }
+    //
+}
 
       
 

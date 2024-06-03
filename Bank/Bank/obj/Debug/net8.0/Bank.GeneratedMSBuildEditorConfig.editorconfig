@@ -18,6 +18,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Arina\OneDrive\Документы\GitHub\STANKIN_DataBaseProject\Bank\Bank
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Arina/OneDrive/Документы/GitHub/STANKIN_DataBaseProject/Bank/Bank/Views/Client/EndRegister.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEVuZFJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Arina/OneDrive/Документы/GitHub/STANKIN_DataBaseProject/Bank/Bank/Views/Client/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

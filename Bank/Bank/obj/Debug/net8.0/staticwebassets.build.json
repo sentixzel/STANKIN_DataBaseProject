@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YdoWATYn64Ej4JHMNZvCC2U+dvkA2uSXKw4bg1Xogko=",
+  "Hash": "YM4iBTv3ERJO01Zp3Xx0HhknZEIqmk5/QUvKhK4wGIM=",
   "Source": "Bank",
   "BasePath": "_content/Bank",
   "Mode": "Default",
@@ -245,12 +245,12 @@
       "OriginalItemSpec": "wwwroot\\favicon-32x32.png"
     },
     {
-      "Identity": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\andrew.jpg",
+      "Identity": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\1.jpg",
       "SourceId": "Bank",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\",
       "BasePath": "_content/Bank",
-      "RelativePath": "img/andrew.jpg",
+      "RelativePath": "img/1.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -261,15 +261,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\andrew.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\1.jpg"
     },
     {
-      "Identity": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\Anton.jpg",
+      "Identity": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\2.jpg",
       "SourceId": "Bank",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\",
       "BasePath": "_content/Bank",
-      "RelativePath": "img/Anton.jpg",
+      "RelativePath": "img/2.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -280,7 +280,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Anton.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\2.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\3.jpg",
+      "SourceId": "Bank",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\",
+      "BasePath": "_content/Bank",
+      "RelativePath": "img/3.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\3.jpg"
     },
     {
       "Identity": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\home\\1.jpg",
@@ -338,25 +357,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\home\\3.jpg"
-    },
-    {
-      "Identity": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\malika.jpg",
-      "SourceId": "Bank",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\",
-      "BasePath": "_content/Bank",
-      "RelativePath": "img/malika.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\malika.jpg"
     },
     {
       "Identity": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\js\\site.js",
