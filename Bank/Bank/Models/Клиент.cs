@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Bank.Models
 {
 	public class Клиент
@@ -22,6 +23,12 @@ namespace Bank.Models
         [Required(ErrorMessage = "Адрес обязателен для ввода")]
         [StringLength(100, ErrorMessage = "Адрес не должен превышать 100 символов")]
         public string Адрес { get; set; }
-		public int ID_Отделения { get; set; }
-	}
+
+        [ForeignKey("Отделение")]
+        public int ID_Отделения { get; set; }
+        public virtual ОтделениеБанка Отделение { get; set; }
+
+        public virtual ICollection<Счет> Счета { get; set; }
+        public virtual ICollection<Кредит> Кредиты { get; set; }
+    }
 }

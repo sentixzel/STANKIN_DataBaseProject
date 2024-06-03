@@ -13,5 +13,6 @@ namespace Bank.Models
 		public string НомерТелефона { get; set; }
 		public string ДатаНаима { get; set; }
         public string? Photo { get; set; }
+
     }
 }
