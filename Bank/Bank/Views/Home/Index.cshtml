@@ -13,7 +13,7 @@
     <div class="container">
         @foreach (var отделение in Model)
         {
-            <a href="https://vk.com/orangelos" class="branch">
+            <a href="/Client/Register?branchId=@отделение.ID_Отделения" class="branch">
                 <img src="@отделение.Photo" alt="Photo">
                 <div class="overlay">
                     <div class="text">

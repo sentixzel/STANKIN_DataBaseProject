@@ -1,0 +1,36 @@
+﻿@model Клиент
+<h2>Регистрация клиента</h2>
+
+<form asp-action="Register" method="post">
+    <div>
+        <label>Имя</label>
+        <input asp-for="Имя" />
+        <span asp-validation-for="Имя"></span>
+    </div>
+    <div>
+        <label>Фамилия</label>
+        <input asp-for="Фамилия" />
+        <span asp-validation-for="Фамилия"></span>
+    </div>
+    <div>
+        <label>Дата Рождения</label>
+        <input asp-for="ДатаРождения" />
+        <span asp-validation-for="ДатаРождения"></span>
+    </div>
+    <div>
+        <label>Электронная Почта</label>
+        <input asp-for="ЭлектроннаяПочта" />
+        <span asp-validation-for="ЭлектроннаяПочта"></span>
+    </div>
+    <div>
+        <label>Адрес</label>
+        <input asp-for="Адрес" />
+        <span asp-validation-for="Адрес"></span>
+    </div>
+    <div>
+        <input type="hidden" asp-for="ID_Отделения" />
+    </div>
+    <div>
+        <button type="submit">Зарегистрировать</button>
+    </div>
+</form>

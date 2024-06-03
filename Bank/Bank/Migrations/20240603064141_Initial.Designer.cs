@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bank.Migrations
 {
     [DbContext(typeof(BankContext))]
-    [Migration("20240603050658_Initial")]
+    [Migration("20240603064141_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -38,24 +38,29 @@ namespace Bank.Migrations
 
                     b.Property<string>("Адрес")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("ДатаРождения")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Имя")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Фамилия")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("ЭлектроннаяПочта")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID_Клиента");
+
+                    b.HasIndex("ID_Отделения");
 
                     b.ToTable("Клиенты");
                 });
@@ -71,25 +76,26 @@ namespace Bank.Migrations
                     b.Property<int>("ID_Клиента")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ДатаНачала")
+                    b.Property<DateTime>("Дата_начала")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("ДатаОкончания")
+                    b.Property<DateTime?>("Дата_окончания")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("ОсновнаяСумма")
+                    b.Property<decimal>("Основная_сумма")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<decimal>("ПроцентнаяСтавка")
+                    b.Property<decimal>("Процентная_ставка")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("Статус")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ТипКредита")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Тип_кредита")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("ID_Кредита");
+
+                    b.HasIndex("ID_Клиента");
 
                     b.ToTable("Кредиты");
                 });
@@ -110,17 +116,22 @@ namespace Bank.Migrations
 
                     b.Property<string>("Адрес")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("НазваниеОтделения")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<string>("НомерТелефона")
+                    b.Property<string>("Номертелефона")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("ID_Отделения");
+
+                    b.HasIndex("ID_Сотрудника");
 
                     b.ToTable("ОтделенияБанков");
                 });
@@ -136,13 +147,15 @@ namespace Bank.Migrations
                     b.Property<int>("ID_Кредита")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ДатаПлатежа")
+                    b.Property<DateTime>("Дата_платежа")
                         .HasColumnType("datetime2");
 
-                    b.Property<decimal>("СуммаПлатежа")
+                    b.Property<decimal>("Сумма_платежа")
                         .HasColumnType("decimal(18,2)");
 
                     b.HasKey("ID_Платежа");
+
+                    b.HasIndex("ID_Кредита");
 
                     b.ToTable("ПлатежиПоКредитам");
                 });
@@ -155,26 +168,30 @@ namespace Bank.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID_Сотрудника"));
 
-                    b.Property<DateTime>("ДатаНаима")
+                    b.Property<DateTime>("Дата_найма")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Должность")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Имя")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("НомерТелефона")
+                    b.Property<string>("Номер_телефона")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Фамилия")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("ЭлектроннаяПочта")
+                    b.Property<string>("Электронная_почта")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -197,14 +214,17 @@ namespace Bank.Migrations
                     b.Property<decimal>("Баланс")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<DateTime>("ДатаСоздания")
+                    b.Property<DateTime>("Дата_создания")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ТипСчета")
+                    b.Property<string>("Тип_счета")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("ID_Счета");
+
+                    b.HasIndex("ID_Клиента");
 
                     b.ToTable("Счета");
                 });
@@ -220,23 +240,120 @@ namespace Bank.Migrations
                     b.Property<int>("ID_Счета")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ДатаТранзакции")
+                    b.Property<DateTime>("Дата_транзакции")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Описание")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<decimal>("Сумма")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("ТипТранзакции")
+                    b.Property<string>("Тип_транзакции")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("ID_Транзакции");
 
+                    b.HasIndex("ID_Счета");
+
                     b.ToTable("Транзакции");
+                });
+
+            modelBuilder.Entity("Bank.Models.Клиент", b =>
+                {
+                    b.HasOne("Bank.Models.ОтделениеБанка", "ОтделениеБанка")
+                        .WithMany("Клиенты")
+                        .HasForeignKey("ID_Отделения")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ОтделениеБанка");
+                });
+
+            modelBuilder.Entity("Bank.Models.Кредит", b =>
+                {
+                    b.HasOne("Bank.Models.Клиент", "Клиент")
+                        .WithMany("Кредиты")
+                        .HasForeignKey("ID_Клиента")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Клиент");
+                });
+
+            modelBuilder.Entity("Bank.Models.ОтделениеБанка", b =>
+                {
+                    b.HasOne("Bank.Models.Сотрудник", "Сотрудник")
+                        .WithMany("Отделения")
+                        .HasForeignKey("ID_Сотрудника")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Сотрудник");
+                });
+
+            modelBuilder.Entity("Bank.Models.ПлатежПоКредиту", b =>
+                {
+                    b.HasOne("Bank.Models.Кредит", "Кредит")
+                        .WithMany("ПлатежиПоКредитам")
+                        .HasForeignKey("ID_Кредита")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Кредит");
+                });
+
+            modelBuilder.Entity("Bank.Models.Счет", b =>
+                {
+                    b.HasOne("Bank.Models.Клиент", "Клиент")
+                        .WithMany("Счета")
+                        .HasForeignKey("ID_Клиента")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Клиент");
+                });
+
+            modelBuilder.Entity("Bank.Models.Транзакция", b =>
+                {
+                    b.HasOne("Bank.Models.Счет", "Счет")
+                        .WithMany("Транзакции")
+                        .HasForeignKey("ID_Счета")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Счет");
+                });
+
+            modelBuilder.Entity("Bank.Models.Клиент", b =>
+                {
+                    b.Navigation("Кредиты");
+
+                    b.Navigation("Счета");
+                });
+
+            modelBuilder.Entity("Bank.Models.Кредит", b =>
+                {
+                    b.Navigation("ПлатежиПоКредитам");
+                });
+
+            modelBuilder.Entity("Bank.Models.ОтделениеБанка", b =>
+                {
+                    b.Navigation("Клиенты");
+                });
+
+            modelBuilder.Entity("Bank.Models.Сотрудник", b =>
+                {
+                    b.Navigation("Отделения");
+                });
+
+            modelBuilder.Entity("Bank.Models.Счет", b =>
+                {
+                    b.Navigation("Транзакции");
                 });
 #pragma warning restore 612, 618
         }
