@@ -7,7 +7,7 @@ namespace Bank.Models
 		[Key]
 		public int ID_Транзакции { get; set; }
 		public int ID_Счета { get; set; }
-		public DateTime ДатаТранзакции { get; set; }
+		public string ДатаТранзакции { get; set; }
 		public string ТипТранзакции { get; set; }
 		public decimal Сумма { get; set; }
 		public string Описание { get; set; }

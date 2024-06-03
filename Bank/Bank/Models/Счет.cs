@@ -9,6 +9,6 @@ namespace Bank.Models
 		public int ID_Клиента { get; set; }
 		public string ТипСчета { get; set; }
 		public decimal Баланс { get; set; }
-		public DateTime ДатаСоздания { get; set; }
+		public string ДатаСоздания { get; set; }
 	}
 }

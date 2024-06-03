@@ -3,19 +3,25 @@
     ViewData["Title"] = "Главная страница сайта";
 }
 
+<link rel="stylesheet" href="~/css/StyleHome.css" asp-append-version="true" />
 
+<h1>Добро пожаловать! Хотите открыть счет? Выберите отделение банка</h1>
 @foreach (var отделение in Model)
 {
     <tr>
-        <td>@отделение.ID_Отделения</td>
+        <div class="container">
+        <a href="https://vk.com/orangelos"><img src=@отделение.Photo alt="Andrew"></a>
         <td>@отделение.НазваниеОтделения</td>
         <td>@отделение.Адрес</td>
-        <td>@отделение.НомерТелефона</td>
+        </div>
+
     </tr>
 }
+<!-- 
 
 
-<link rel="stylesheet" href="~/css/StyleHome.css" asp-append-version="true" />
+
+
 <h1>Вас приветствуют</h1>
 
 
@@ -25,6 +31,12 @@
     <a href="https://vk.com/sgvvv"><img src="img/malika.jpg" alt="Malika"></a>
     <a href="https://vk.com/aazelenov"><img src="img/Anton.jpg" alt="Anton"></a>
 </div>
+
+
+
+-->
+
+
 
 
 

@@ -9,6 +9,7 @@ namespace Bank.Models
 		public string НазваниеОтделения { get; set; }
 		public string Адрес { get; set; }
 		public string НомерТелефона { get; set; }
-		public int ID_Сотрудника { get; set; }
+        public string? Photo { get; set; }
+        public int ID_Сотрудника { get; set; }
 	}
 }

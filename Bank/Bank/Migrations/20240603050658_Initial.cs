@@ -36,11 +36,12 @@ namespace Bank.Migrations
                     ID_Кредита = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ID_Клиента = table.Column<int>(type: "int", nullable: false),
-                    ТипКредита = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ТипКредита = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ОсновнаяСумма = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ПроцентнаяСтавка = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ДатаНачала = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ДатаОкончания = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    ДатаОкончания = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Статус = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -56,6 +57,7 @@ namespace Bank.Migrations
                     НазваниеОтделения = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Адрес = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     НомерТелефона = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ID_Сотрудника = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>

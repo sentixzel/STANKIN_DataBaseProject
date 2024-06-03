@@ -80,8 +80,10 @@ namespace Bank.Migrations
                     b.Property<decimal>("ПроцентнаяСтавка")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("Статус")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ТипКредита")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID_Кредита");
@@ -99,6 +101,9 @@ namespace Bank.Migrations
 
                     b.Property<int>("ID_Сотрудника")
                         .HasColumnType("int");
+
+                    b.Property<string>("Photo")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Адрес")
                         .IsRequired()

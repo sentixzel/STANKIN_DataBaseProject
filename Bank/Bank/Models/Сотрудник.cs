@@ -11,6 +11,6 @@ namespace Bank.Models
 		public string Должность { get; set; }
 		public string ЭлектроннаяПочта { get; set; }
 		public string НомерТелефона { get; set; }
-		public DateTime ДатаНаима { get; set; }
+		public string ДатаНаима { get; set; }
 	}
 }
