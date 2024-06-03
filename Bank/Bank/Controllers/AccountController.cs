@@ -25,7 +25,7 @@ namespace Bank.Controllers
         public IActionResult Login(string email, string password)
         {
             var клиент = _context.Клиенты
-                .FirstOrDefault(k => k.ЭлектроннаяПочта == email && k.Адрес == password);
+                .FirstOrDefault(k => k.ЭлектроннаяПочта == email && k.Пароль == password);
 
             if (клиент != null)
             {
@@ -37,6 +37,10 @@ namespace Bank.Controllers
             ModelState.AddModelError("", "Неверная электронная почта или адрес.");
             return View();
         }
+
+
+
+
 
         public IActionResult Profile(int id)
         {

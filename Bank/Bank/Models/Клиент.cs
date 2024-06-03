@@ -20,9 +20,9 @@ namespace Bank.Models
         [Required(ErrorMessage = "Обязательно введите почту")]
         [EmailAddress(ErrorMessage = "Неверный формат почты")]
         public string ЭлектроннаяПочта { get; set; }
-        [Required(ErrorMessage = "Адрес обязателен для ввода")]
-        [StringLength(100, ErrorMessage = "Адрес не должен превышать 100 символов")]
-        public string Адрес { get; set; }
+        [Required(ErrorMessage = "Пароль обязателен для ввода")]
+        [StringLength(100, ErrorMessage = "Пароль не должен превышать 100 символов")]
+        public string Пароль { get; set; }
 
         [ForeignKey("Отделение")]
         public int ID_Отделения { get; set; }
