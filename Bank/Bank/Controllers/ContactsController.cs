@@ -70,7 +70,7 @@ namespace Bank.Controllers
                         mailMessage.From = new MailAddress(smtpUsername);
                         mailMessage.To.Add($"{contact.Email}"); // Укажите адрес получателя
                         mailMessage.Subject = "Обратная связь";
-                        mailMessage.Body = $"Здравствуйте {contact.Name}, спасибо, что обратились в службу поддержки, ваше сообщение получено,\n ближайший свободный оператор ответит вам, а пока проверьте правильность введенных данных\n Имя {contact.Name} \r\n Фамилия: {contact.Surname}\r\n Почта: {contact.Email}\r\n Телефон: {contact.Phone}\r\n Адрес: {contact.Address}";
+                        mailMessage.Body = $"Здравствуйте {contact.Name}, спасибо, что обратились в службу поддержки, ваше сообщение получено,\n ближайший свободный оператор ответит вам, а пока проверьте правильность введенных данных\n Имя: {contact.Name} \r\n Фамилия: {contact.Surname}\r\n Почта: {contact.Email}\r\n Телефон: {contact.Phone}\r\n Адрес: {contact.Address}";
                         
                         try
                         {
