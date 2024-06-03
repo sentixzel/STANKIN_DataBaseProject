@@ -1,4 +1,5 @@
 ﻿using Bank.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bank.Controllers
@@ -6,13 +7,7 @@ namespace Bank.Controllers
     public class ClientController : Controller
     {
         private readonly BankContext _context;
-
-        public ClientController(BankContext context)
-        {
-            _context = context;
-        }
-
-        [HttpGet]
+        private readonly IPasswordHasher<Клиент> _passwordHasher;
         public IActionResult Register(int branchId)
         {
             var model = new Клиент
@@ -28,31 +23,41 @@ namespace Bank.Controllers
         {
             if (ModelState.IsValid)
             {
-                var клиент = new Клиент
+                try
                 {
-                    Имя = model.Имя,
-                    Фамилия = model.Фамилия,
-                    ДатаРождения = model.ДатаРождения,
-                    ЭлектроннаяПочта = model.ЭлектроннаяПочта,
-                    Пароль = model.Пароль,
-                    ID_Отделения = model.ID_Отделения
-                };
+                    var клиент = new Клиент
+                    {
+                        Имя = model.Имя,
+                        Фамилия = model.Фамилия,
+                        ДатаРождения = model.ДатаРождения,
+                        ЭлектроннаяПочта = model.ЭлектроннаяПочта,
+                        ID_Отделения = model.ID_Отделения
+                    };
 
-                _context.Клиенты.Add(клиент);
-                _context.SaveChanges();
+                    // Хэшируем пароль
+                    клиент.Пароль = _passwordHasher.HashPassword(клиент, model.Пароль);
 
-                return RedirectToAction("EndRegister", "Client");
+                    _context.Клиенты.Add(клиент);
+                    _context.SaveChanges();
+
+                    return RedirectToAction("EndRegister", "Client");
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, $"Ошибка при добавлении клиента: {ex.Message}");
+                }
             }
 
-            return View();
+            return View(model);
         }
-
 
         public IActionResult EndRegister()
         {
             return View();
         }
 
+
+       
 
 
     }

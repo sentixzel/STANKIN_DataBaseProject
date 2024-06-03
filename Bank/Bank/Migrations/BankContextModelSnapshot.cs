@@ -33,19 +33,18 @@ namespace Bank.Migrations
                     b.Property<int>("ID_Отделения")
                         .HasColumnType("int");
 
-                    b.Property<string>("Адрес")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("ДатаРождения")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("ДатаРождения")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Имя")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Пароль")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Фамилия")
                         .IsRequired()

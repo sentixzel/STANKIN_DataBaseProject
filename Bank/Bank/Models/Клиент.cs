@@ -15,7 +15,7 @@ namespace Bank.Models
         [Required(ErrorMessage = "Дата рождения обязательна для ввода")]
         [DataType(DataType.Date, ErrorMessage = "Введите корректную дату")]
         [Display(Name = "Дата рождения")]
-        public string ДатаРождения { get; set; }
+        public DateTime ДатаРождения { get; set; }
 
         [Required(ErrorMessage = "Обязательно введите почту")]
         [EmailAddress(ErrorMessage = "Неверный формат почты")]

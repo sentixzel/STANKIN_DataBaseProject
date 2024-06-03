@@ -35,9 +35,9 @@ namespace Bank.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Имя = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Фамилия = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    ДатаРождения = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ДатаРождения = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ЭлектроннаяПочта = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Адрес = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Пароль = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ID_Отделения = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
