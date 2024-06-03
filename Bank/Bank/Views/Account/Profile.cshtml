@@ -1,0 +1,66 @@
+﻿@model ЛичныйКабинетМодель
+<link rel="stylesheet" href="~/css/Profile.css" asp-append-version="true" />
+<h2>Личный кабинет</h2>
+
+    <div class="main-section">
+        <h3>Клиент</h3>
+        <p>Имя: @Model.Клиент.Имя</p>
+        <p>Фамилия: @Model.Клиент.Фамилия</p>
+        <p>Электронная почта: @Model.Клиент.ЭлектроннаяПочта</p>
+    </div>
+
+    <div class="main-section">
+        <h3>Счета</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID Счета</th>
+                    <th>Тип Счета</th>
+                    <th>Баланс</th>
+                    <th>Дата Создания</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var счет in Model.Счета)
+            {
+                <tr>
+                    <td>@счет.ID_Счета</td>
+                    <td>@счет.ТипСчета</td>
+                    <td>@счет.Баланс</td>
+                    <td>@счет.ДатаСоздания</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="main-section">
+    <h3>Кредиты</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID Кредита</th>
+                <th>Тип Кредита</th>
+                <th>Основная Сумма</th>
+                <th>Процентная Ставка</th>
+                <th>Дата Начала</th>
+                <th>Дата Окончания</th>
+                <th>Статус</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var кредит in Model.Кредиты)
+            {
+                <tr>
+                    <td>@кредит.ID_Кредита</td>
+                    <td>@кредит.ТипКредита</td>
+                    <td>@кредит.ОсновнаяСумма</td>
+                    <td>@кредит.ПроцентнаяСтавка</td>
+                    <td>@кредит.ДатаНачала</td>
+                    <td>@кредит.ДатаОкончания</td>
+                    <td>@кредит.Статус</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

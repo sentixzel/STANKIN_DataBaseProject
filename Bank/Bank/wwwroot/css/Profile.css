@@ -1,0 +1,108 @@
+﻿body {
+    background: #f4f4f4; /* Light background for the main content */
+}
+
+/* Container styling for the personal cabinet section */
+main {
+    max-width: 1200px;
+    margin: 50px auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+    /* Headings within the personal cabinet */
+    main h2, main h3 {
+        color: #444;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+/* Personal details section */
+.main-section {
+    margin-bottom: 30px;
+}
+
+    .main-section p {
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: #666;
+    }
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+    .table th, .table td {
+        padding: 15px;
+        text-align: left;
+        color: #333;
+    }
+
+    .table th {
+        background: #444;
+        color: #fff;
+        border-bottom: 2px solid #ff6a00;
+    }
+
+    .table tr:nth-child(even) {
+        background: #f9f9f9;
+    }
+
+    .table tr:hover {
+        background: #ffecd1;
+    }
+
+    .table td {
+        border-bottom: 1px solid #ccc;
+    }
+
+        .table td:last-child, .table th:last-child {
+            border-right: none;
+        }
+
+.table-head {
+    background: #444;
+    color: #fff;
+}
+
+.table-foot {
+    background: #444;
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .main-section, .table {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+        .table thead, .table tbody, .table th, .table td, .table tr {
+            display: block;
+        }
+
+        .table tr {
+            margin-bottom: 15px;
+        }
+
+        .table td {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+            .table td::before {
+                content: attr(data-label);
+                font-weight: bold;
+                min-width: 120px;
+                color: #666;
+            }
+}
