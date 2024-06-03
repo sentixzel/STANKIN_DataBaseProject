@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Bank.Models
 {
@@ -13,6 +14,10 @@ namespace Bank.Models
 		public string НомерТелефона { get; set; }
 		public string ДатаНаима { get; set; }
         public string? Photo { get; set; }
+
+        [ForeignKey("ОтделениеБанка")]
+        public int ID_Отделения { get; set; }
+        public virtual ОтделениеБанка Отделение { get; set; }
 
     }
 }

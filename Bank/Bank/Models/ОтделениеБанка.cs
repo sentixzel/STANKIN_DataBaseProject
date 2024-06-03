@@ -12,11 +12,6 @@ namespace Bank.Models
 		public string НомерТелефона { get; set; }
         public string? Photo { get; set; }
 
-        [ForeignKey("Сотрудник")]
-        public int ID_Сотрудника { get; set; }
-        public virtual Сотрудник Сотрудник { get; set; }
-
-        public virtual ICollection<Сотрудник> Сотрудники { get; set; }
         public virtual ICollection<Клиент> Клиенты { get; set; }
 
     }

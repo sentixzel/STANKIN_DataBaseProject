@@ -108,9 +108,6 @@ namespace Bank.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID_Отделения"));
 
-                    b.Property<int>("ID_Сотрудника")
-                        .HasColumnType("int");
-
                     b.Property<string>("Photo")
                         .HasColumnType("nvarchar(max)");
 
@@ -127,8 +124,6 @@ namespace Bank.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID_Отделения");
-
-                    b.HasIndex("ID_Сотрудника");
 
                     b.ToTable("ОтделенияБанков");
                 });
@@ -165,6 +160,9 @@ namespace Bank.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID_Сотрудника"));
 
+                    b.Property<int>("ID_Отделения")
+                        .HasColumnType("int");
+
                     b.Property<string>("Photo")
                         .HasColumnType("nvarchar(max)");
 
@@ -184,7 +182,7 @@ namespace Bank.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("ОтделениеБанкаID_Отделения")
+                    b.Property<int>("ОтделениеID_Отделения")
                         .HasColumnType("int");
 
                     b.Property<string>("Фамилия")
@@ -197,7 +195,7 @@ namespace Bank.Migrations
 
                     b.HasKey("ID_Сотрудника");
 
-                    b.HasIndex("ОтделениеБанкаID_Отделения");
+                    b.HasIndex("ОтделениеID_Отделения");
 
                     b.ToTable("Сотрудники");
                 });
@@ -284,17 +282,6 @@ namespace Bank.Migrations
                     b.Navigation("Клиент");
                 });
 
-            modelBuilder.Entity("Bank.Models.ОтделениеБанка", b =>
-                {
-                    b.HasOne("Bank.Models.Сотрудник", "Сотрудник")
-                        .WithMany()
-                        .HasForeignKey("ID_Сотрудника")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Сотрудник");
-                });
-
             modelBuilder.Entity("Bank.Models.ПлатежПоКредиту", b =>
                 {
                     b.HasOne("Bank.Models.Кредит", "Кредит")
@@ -308,9 +295,13 @@ namespace Bank.Migrations
 
             modelBuilder.Entity("Bank.Models.Сотрудник", b =>
                 {
-                    b.HasOne("Bank.Models.ОтделениеБанка", null)
-                        .WithMany("Сотрудники")
-                        .HasForeignKey("ОтделениеБанкаID_Отделения");
+                    b.HasOne("Bank.Models.ОтделениеБанка", "Отделение")
+                        .WithMany()
+                        .HasForeignKey("ОтделениеID_Отделения")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Отделение");
                 });
 
             modelBuilder.Entity("Bank.Models.Счет", b =>
@@ -350,8 +341,6 @@ namespace Bank.Migrations
             modelBuilder.Entity("Bank.Models.ОтделениеБанка", b =>
                 {
                     b.Navigation("Клиенты");
-
-                    b.Navigation("Сотрудники");
                 });
 
             modelBuilder.Entity("Bank.Models.Счет", b =>
