@@ -1,32 +1,29 @@
-﻿@model Клиент
-<h2>Регистрация клиента</h2>
+﻿@{
+    ViewData["Title"] = "Login";
+}
 
-<form asp-action="Register" method="post">
-    <div>
-        <label>Имя</label>
-        <input asp-for="Имя" />
-        <span asp-validation-for="Имя"></span>
+<h2>Login</h2>
+
+<form method="post" asp-action="Login">
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" required />
     </div>
-    <div>
-        <label>Фамилия</label>
-        <input asp-for="Фамилия" />
-        <span asp-validation-for="Фамилия"></span>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" name="password" required />
     </div>
-    
-    <div>
-        <label>Электронная Почта</label>
-        <input asp-for="ЭлектроннаяПочта" />
-        <span asp-validation-for="ЭлектроннаяПочта"></span>
-    </div>
-    <div>
-        <label>Пароль</label>
-        <input asp-for="Пароль" />
-        <span asp-validation-for="Пароль"></span>
-    </div>
-    <div>
-       
-    </div>
-    <div>
-        <button type="submit">Зарегистрировать</button>
-    </div>
+    <button type="submit" class="btn btn-primary">Login</button>
 </form>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
