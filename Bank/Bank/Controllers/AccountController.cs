@@ -48,7 +48,7 @@ namespace Bank.Controllers
 
             // Авторизация неуспешна, обратно на страницу входа с ошибкой
             ModelState.AddModelError("", "Неверная электронная почта или пароль.");
-            return View("Login"); // Исправлено: возвращаем представление "Login"
+            return View("Login");
         }
 
 
