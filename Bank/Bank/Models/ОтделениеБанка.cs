@@ -13,8 +13,8 @@ namespace Bank.Models
         public string? Photo { get; set; }
 
         
-        public virtual ICollection<Сотрудник> Сотрудники { get; set; }
-        public virtual ICollection<Клиент> Клиенты { get; set; }
+        //public virtual ICollection<Сотрудник> Сотрудники { get; set; }
+       // public virtual ICollection<Клиент> Клиенты { get; set; }
 
     }
 }

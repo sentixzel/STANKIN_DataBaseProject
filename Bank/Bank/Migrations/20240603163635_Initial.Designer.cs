@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bank.Migrations
 {
     [DbContext(typeof(BankContext))]
-    [Migration("20240603143418_Initial")]
+    [Migration("20240603163635_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -46,8 +46,7 @@ namespace Bank.Migrations
 
                     b.Property<string>("Пароль")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Фамилия")
                         .IsRequired()
@@ -59,8 +58,6 @@ namespace Bank.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID_Клиента");
-
-                    b.HasIndex("ID_Отделения");
 
                     b.ToTable("Клиенты");
                 });
@@ -259,21 +256,10 @@ namespace Bank.Migrations
                     b.ToTable("Транзакции");
                 });
 
-            modelBuilder.Entity("Bank.Models.Клиент", b =>
-                {
-                    b.HasOne("Bank.Models.ОтделениеБанка", "Отделение")
-                        .WithMany("Клиенты")
-                        .HasForeignKey("ID_Отделения")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Отделение");
-                });
-
             modelBuilder.Entity("Bank.Models.Кредит", b =>
                 {
                     b.HasOne("Bank.Models.Клиент", "Клиент")
-                        .WithMany("Кредиты")
+                        .WithMany()
                         .HasForeignKey("ID_Клиента")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -295,7 +281,7 @@ namespace Bank.Migrations
             modelBuilder.Entity("Bank.Models.Сотрудник", b =>
                 {
                     b.HasOne("Bank.Models.ОтделениеБанка", "ОтделениеБанка")
-                        .WithMany("Сотрудники")
+                        .WithMany()
                         .HasForeignKey("ID_Одленения")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -306,7 +292,7 @@ namespace Bank.Migrations
             modelBuilder.Entity("Bank.Models.Счет", b =>
                 {
                     b.HasOne("Bank.Models.Клиент", "Клиент")
-                        .WithMany("Счета")
+                        .WithMany()
                         .HasForeignKey("ID_Клиента")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -325,23 +311,9 @@ namespace Bank.Migrations
                     b.Navigation("Счет");
                 });
 
-            modelBuilder.Entity("Bank.Models.Клиент", b =>
-                {
-                    b.Navigation("Кредиты");
-
-                    b.Navigation("Счета");
-                });
-
             modelBuilder.Entity("Bank.Models.Кредит", b =>
                 {
                     b.Navigation("Платежи");
-                });
-
-            modelBuilder.Entity("Bank.Models.ОтделениеБанка", b =>
-                {
-                    b.Navigation("Клиенты");
-
-                    b.Navigation("Сотрудники");
                 });
 
             modelBuilder.Entity("Bank.Models.Счет", b =>

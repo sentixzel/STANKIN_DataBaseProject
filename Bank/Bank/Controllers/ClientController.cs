@@ -1,5 +1,5 @@
 ﻿using Bank.Models;
-using Microsoft.AspNetCore.Identity;
+//using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bank.Controllers
@@ -7,15 +7,27 @@ namespace Bank.Controllers
     public class ClientController : Controller
     {
         private readonly BankContext _context;
-        private readonly IPasswordHasher<Клиент> _passwordHasher;
-        public IActionResult Register(int branchId)
+
+        public ClientController(BankContext context)
         {
-            var model = new Клиент
-            {
+            _context = context;
+        }
+
+         [HttpGet]
+         public IActionResult Register(int branchId)
+         {
+             var model = new Клиент
+             {
                 ID_Отделения = branchId
             };
+        
+             return View(model);
+         }
 
-            return View(model);
+
+        public IActionResult Index()
+        {
+            return View();
         }
 
         [HttpPost]
@@ -23,31 +35,23 @@ namespace Bank.Controllers
         {
             if (ModelState.IsValid)
             {
-                try
+                var клиент = new Клиент
                 {
-                    var клиент = new Клиент
-                    {
-                        Имя = model.Имя,
-                        Фамилия = model.Фамилия,
-                        ДатаРождения = model.ДатаРождения,
-                        ЭлектроннаяПочта = model.ЭлектроннаяПочта,
-                        ID_Отделения = model.ID_Отделения
-                    };
+                    Имя = model.Имя,
+                    Фамилия = model.Фамилия,
+                   ДатаРождения = model.ДатаРождения,
+                    ЭлектроннаяПочта = model.ЭлектроннаяПочта,
+                    Пароль = model.Пароль,
+                    ID_Отделения = model.ID_Отделения
+                };
 
-                    // Хэшируем пароль
-                    клиент.Пароль = _passwordHasher.HashPassword(клиент, model.Пароль);
+                _context.Клиенты.Add(клиент);
+                _context.SaveChanges();
 
-                    _context.Клиенты.Add(клиент);
-                    _context.SaveChanges();
-
-                    return RedirectToAction("EndRegister", "Client");
-                }
-                catch (Exception ex)
-                {
-                    ModelState.AddModelError(string.Empty, $"Ошибка при добавлении клиента: {ex.Message}");
-                }
+                return RedirectToAction("Index", "Home");
             }
 
+            
             return View(model);
         }
 
@@ -55,6 +59,9 @@ namespace Bank.Controllers
         {
             return View();
         }
+    }
+
+   
 
 
        
@@ -64,4 +71,4 @@ namespace Bank.Controllers
 
 
 
-}
+

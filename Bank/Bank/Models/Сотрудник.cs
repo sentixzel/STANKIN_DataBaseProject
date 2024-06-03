@@ -16,7 +16,7 @@ namespace Bank.Models
         public string? Photo { get; set; }
 
         [ForeignKey("ОтделениеБанка")]
-        public int ID_Одленения{ get; set; }
+        public int ID_Отделения{ get; set; }
         public virtual ОтделениеБанка ОтделениеБанка { get; set; }
 
 

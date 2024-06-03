@@ -5,6 +5,8 @@
 <div class="container">
     <h2>Регистрация клиента</h2>
 
+    <h2>Регистрация</h2>
+
     <form asp-action="Register" method="post">
         <div class="form-group">
             <label asp-for="Имя">Имя</label>
@@ -16,11 +18,13 @@
             <input asp-for="Фамилия" class="form-control" />
             <span asp-validation-for="Фамилия" class="text-danger"></span>
         </div>
+       
         <div class="form-group">
-            <label asp-for="ДатаРождения">Дата Рождения</label>
+            <label asp-for="ДатаРождения">ДатаРождения</label>
             <input asp-for="ДатаРождения" class="form-control" />
             <span asp-validation-for="ДатаРождения" class="text-danger"></span>
         </div>
+
         <div class="form-group">
             <label asp-for="ЭлектроннаяПочта">Электронная Почта</label>
             <input asp-for="ЭлектроннаяПочта" class="form-control" />
@@ -28,12 +32,17 @@
         </div>
         <div class="form-group">
             <label asp-for="Пароль">Пароль</label>
-            <input asp-for="Пароль" class="form-control" />
+            <input asp-for="Пароль" class="form-control" type="password" />
             <span asp-validation-for="Пароль" class="text-danger"></span>
         </div>
-        <div class="form-group hidden">
-            <input type="hidden" asp-for="ID_Отделения" />
+
+        <div class="form-group">
+            <label asp-for="ID_Отделения">ID_Отделения</label>
+            <input asp-for="ID_Отделения" class="form-control"  />
+            <span asp-validation-for="ID_Отделения" class="text-danger"></span>
         </div>
+
+
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Зарегистрировать</button>
         </div>
