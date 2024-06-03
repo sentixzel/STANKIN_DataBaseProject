@@ -1,11 +1,12 @@
 using Bank.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Data.SqlClient;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddScoped<IPasswordHasher<Клиент>, PasswordHasher<Клиент>>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BankContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("BankCS")));
