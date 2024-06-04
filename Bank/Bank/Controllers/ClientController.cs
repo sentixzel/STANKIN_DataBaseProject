@@ -35,13 +35,24 @@ namespace Bank.Controllers
             {
                 try
                 {
+                    // Проверка, существует ли уже клиент с такой электронной почтой
+                    var existingClient = _context.Клиенты
+                        .FirstOrDefault(c => c.ЭлектроннаяПочта == model.ЭлектроннаяПочта);
+
+                    if (existingClient != null)
+                    {
+                        ModelState.AddModelError("ЭлектроннаяПочта", "Электронная почта уже используется.");
+                        return View(model);
+                    }
+
                     var клиент = new Клиент
                     {
                         Имя = model.Имя,
                         Фамилия = model.Фамилия,
                         ДатаРождения = model.ДатаРождения,
                         ЭлектроннаяПочта = model.ЭлектроннаяПочта,
-                        ID_Отделения = model.ID_Отделения
+                        ID_Отделения = model.ID_Отделения,
+                        PhoneNumber = model.PhoneNumber
                     };
 
                     // Хэшируем пароль
@@ -61,7 +72,7 @@ namespace Bank.Controllers
             return View(model);
         }
 
-       
+
         public IActionResult EndRegister()
         {
             return View();

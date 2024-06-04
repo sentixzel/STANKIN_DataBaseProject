@@ -20,6 +20,7 @@ namespace Bank.Migrations
                     Имя = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Фамилия = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     ДатаРождения = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ЭлектроннаяПочта = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Пароль = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ID_Отделения = table.Column<int>(type: "int", nullable: false)
@@ -105,14 +106,14 @@ namespace Bank.Migrations
                     НомерТелефона = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ДатаНаима = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ID_Одленения = table.Column<int>(type: "int", nullable: false)
+                    ID_Отделения = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Сотрудники", x => x.ID_Сотрудника);
                     table.ForeignKey(
-                        name: "FK_Сотрудники_ОтделенияБанков_ID_Одленения",
-                        column: x => x.ID_Одленения,
+                        name: "FK_Сотрудники_ОтделенияБанков_ID_Отделения",
+                        column: x => x.ID_Отделения,
                         principalTable: "ОтделенияБанков",
                         principalColumn: "ID_Отделения",
                         onDelete: ReferentialAction.Cascade);
@@ -173,9 +174,9 @@ namespace Bank.Migrations
                 column: "ID_Кредита");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Сотрудники_ID_Одленения",
+                name: "IX_Сотрудники_ID_Отделения",
                 table: "Сотрудники",
-                column: "ID_Одленения");
+                column: "ID_Отделения");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Счета_ID_Клиента",

@@ -33,6 +33,10 @@ namespace Bank.Migrations
                     b.Property<int>("ID_Отделения")
                         .HasColumnType("int");
 
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("ДатаРождения")
                         .HasColumnType("datetime2");
 
@@ -156,7 +160,7 @@ namespace Bank.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID_Сотрудника"));
 
-                    b.Property<int>("ID_Одленения")
+                    b.Property<int>("ID_Отделения")
                         .HasColumnType("int");
 
                     b.Property<string>("Photo")
@@ -188,7 +192,7 @@ namespace Bank.Migrations
 
                     b.HasKey("ID_Сотрудника");
 
-                    b.HasIndex("ID_Одленения");
+                    b.HasIndex("ID_Отделения");
 
                     b.ToTable("Сотрудники");
                 });
@@ -279,7 +283,7 @@ namespace Bank.Migrations
                 {
                     b.HasOne("Bank.Models.ОтделениеБанка", "ОтделениеБанка")
                         .WithMany()
-                        .HasForeignKey("ID_Одленения")
+                        .HasForeignKey("ID_Отделения")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

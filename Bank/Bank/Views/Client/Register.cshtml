@@ -1,12 +1,11 @@
 ﻿@model Клиент
 <link rel="stylesheet" href="~/css/Register.css" asp-append-version="true" />
 
-
 <div class="container">
-
     <h2>Регистрация</h2>
 
-    <form asp-action="Register" method="post">
+    <form asp-action="Register" method="post" onsubmit="return validateCheckboxes()">
+        
         <div class="form-group">
             <label asp-for="Имя">Имя</label>
             <input asp-for="Имя" class="form-control" />
@@ -17,13 +16,16 @@
             <input asp-for="Фамилия" class="form-control" />
             <span asp-validation-for="Фамилия" class="text-danger"></span>
         </div>
-       
         <div class="form-group">
-            <label asp-for="ДатаРождения">ДатаРождения</label>
-            <input asp-for="ДатаРождения" class="form-control" />
+            <label asp-for="PhoneNumber">Номер телефона</label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ДатаРождения">Дата Рождения</label>
+            <input asp-for="ДатаРождения" class="form-control" type="date" min="1900-01-01" max="2014-12-31" />
             <span asp-validation-for="ДатаРождения" class="text-danger"></span>
         </div>
-
         <div class="form-group">
             <label asp-for="ЭлектроннаяПочта">Электронная Почта</label>
             <input asp-for="ЭлектроннаяПочта" class="form-control" />
@@ -34,16 +36,43 @@
             <input asp-for="Пароль" class="form-control" type="password" />
             <span asp-validation-for="Пароль" class="text-danger"></span>
         </div>
-
-        <div class="form-group">
-            <label asp-for="ID_Отделения">ID_Отделения</label>
-            <input asp-for="ID_Отделения" class="form-control"  />
-            <span asp-validation-for="ID_Отделения" class="text-danger"></span>
+        <div class="form-group hidden">
+            <input type="hidden" asp-for="ID_Отделения" />
         </div>
-
-
+        
+        <div class="form-check">
+            <input id="СогласиеНаОбработкуПерсональныхДанных" class="form-check-input" type="checkbox" />
+            <label for="СогласиеНаОбработкуПерсональныхДанных" class="form-check-label">
+                Согласие на обработку персональных данных
+            </label>
+        </div>
+        <div class="form-check">
+            <input id="СогласенСПолитикойКонфиденциальности" class="form-check-input" type="checkbox" />
+            <label for="СогласенСПолитикойКонфиденциальности" class="form-check-label">
+                Согласен с политикой конфиденциальности
+            </label>
+        </div>
+        <div class="form-group">
+            <span id="validation-error" class="text-danger" style="display:none;">Вы должны отметить обе галочки, чтобы продолжить.</span>
+        </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Зарегистрировать</button>
         </div>
     </form>
 </div>
+
+<script>
+    function validateCheckboxes() {
+        var consentToProcess = document.getElementById('СогласиеНаОбработкуПерсональныхДанных').checked;
+        var agreeWithPrivacy = document.getElementById('СогласенСПолитикойКонфиденциальности').checked;
+        var validationError = document.getElementById('validation-error');
+
+        if (!consentToProcess || !agreeWithPrivacy) {
+            validationError.style.display = 'block';
+            return false;
+        }
+
+        validationError.style.display = 'none';
+        return true;
+    }
+</script>

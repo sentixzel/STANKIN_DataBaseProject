@@ -22,10 +22,12 @@ namespace Bank.Models
         public string Фамилия { get; set; }
         [Required(ErrorMessage = "Дата рождения обязательна для ввода")]
         [DataType(DataType.Date, ErrorMessage = "Введите корректную дату")]
-       [Display(Name = "Дата рождения")]
+        [Display(Name = "Дата рождения")]
         public DateTime ДатаРождения { get; set; }
 
-
+        [Required]
+        [RegularExpression(@"^\+?\d{10,15}$", ErrorMessage = "Номер телефона должен содержать от 10 до 15 цифр и может начинаться с '+'.")]
+        public string PhoneNumber { get; set; }
 
 
         [Required(ErrorMessage = "Обязательно введите почту")]
@@ -34,13 +36,14 @@ namespace Bank.Models
 
         [Required(ErrorMessage = "Пароль обязателен для заполнения.")]
         [DataType(DataType.Password)]
+        [MinLength(6, ErrorMessage = "Пароль должен быть не менее 6 символов.")]
+        [RegularExpression(@"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$", ErrorMessage = "Пароль должен содержать хотя бы одну букву и одну цифру.")]
         public string Пароль { get; set; }
 
 
 
 
-
-       [ForeignKey("Отделение")]
+        [ForeignKey("Отделение")]
         [Required]
         public int ID_Отделения { get; set; }
        // public virtual ОтделениеБанка Отделение { get; set; }
