@@ -18,14 +18,12 @@ namespace Bank.Models
         public string Email { get; set; }
         [Display(Name = "Введите телефон, который привязан к счету")]
         [Required(ErrorMessage = "Обязательно введите телефон")]
+        [PhoneNumberValidation]
         public string Phone { get; set; }
         [Display(Name = "Введите адрес")]
         [Required(ErrorMessage = "Обязательно введите адрес")]
         public string Address { get; set; }
        
-        [Display(Name = "Введите возраст")]
-        [Required(ErrorMessage = "Обязательно введите возраст")]
-        public int Age { get; set; }
        
         [Display(Name = "Что вы хотите спросить? Напишите :)")]
         [Required(ErrorMessage = "Обязательно введите вопрос")]
