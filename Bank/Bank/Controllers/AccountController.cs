@@ -218,11 +218,30 @@ namespace Bank.Controllers
             {
                 var currentAccounts = _context.Кредиты.Where(a => a.Клиент.ID_Клиента == currentUser.ID_Клиента).ToList();
 
-                if (currentAccounts.Count >= 2)
+                
+
+                if (model.ТипКредита == "Долгосрочный  5 лет")
                 {
-                   // ModelState.AddModelError("OpenAccount", "Вы не можете взять больше 2 кредитов.");
-                    return View("OpenAccount", model);
+                    model.ПроцентнаяСтавка = 14;
+                    model.ДатаОкончания = DateTime.Now;
+                    model.ДатаОкончания = model.ДатаОкончания.AddMonths(60);
+
                 }
+                else
+                    if (model.ТипКредита == "Среднесрочный 3 года")
+                {
+                    model.ПроцентнаяСтавка = 18;
+                  
+                    model.ДатаОкончания = DateTime.Now;
+                    model.ДатаОкончания = model.ДатаОкончания.AddMonths(48);
+                }
+                else
+                {
+                    model.ПроцентнаяСтавка = 26;
+                    model.ДатаОкончания = DateTime.Now;
+                    model.ДатаОкончания = model.ДатаОкончания.AddMonths(12);
+                }
+                
 
                 var account = new Кредит
                 {
@@ -230,9 +249,22 @@ namespace Bank.Controllers
                     ТипКредита = model.ТипКредита,
                     ОсновнаяСумма = model.СуммаКредита,
                     ДатаНачала = DateTime.Now,
+                    ДатаОкончания = model.ДатаОкончания,
+                    ПроцентнаяСтавка = model.ПроцентнаяСтавка,
+                    Статус="Активный"
                     // НомерСчета = GenerateAccountNumber()
-
                 };
+
+                if (currentAccounts.Count > 5)
+                {
+                    model.Статус = "Отменен";
+                    account.Статус = "Отменен";
+                    _context.Кредиты.Add(account);
+                    
+                    ModelState.AddModelError("OpenCredit", "Вы не можете взять больше 2 кредитов.");
+                    return View("OpenCredit", model);
+
+                }
                 var otherAccounts = _context.Счета.Where(a => a.Клиент.ID_Клиента == model.ID_Клиента && a.ID_Счета != tupa).ToList();
 
                 if (otherAccounts.Any())
@@ -247,6 +279,10 @@ namespace Bank.Controllers
                 }
                 else
                 {
+                    model.Статус = "Отменен";
+                    account.Статус = "Отменен";
+                    _context.Кредиты.Add(account);
+                    
                     TempData["Error"] = "Взять кредит не удалось, нет подходящих счетов";
                 }
 
@@ -255,8 +291,8 @@ namespace Bank.Controllers
                 return RedirectToAction("Profile", new { id = currentUser.ID_Клиента });
             }
 
-            ModelState.AddModelError("OpenAccount", "Не удалось найти пользователя.");
-            return View("OpenAccount", model);
+            //ModelState.AddModelError("OpenAccount", "Не удалось найти пользователя.");
+            return View("OpenCredit",model);
         }
 
 
