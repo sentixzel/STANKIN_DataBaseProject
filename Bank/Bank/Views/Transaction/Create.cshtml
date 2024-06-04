@@ -1,13 +1,14 @@
 ﻿@model TransactionViewModel
 
 <h2>Создание Транзакции</h2>
+<link rel="stylesheet" href="~/css/Trans.css" asp-append-version="true" />
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Транзакция</h4>
+   
         <hr />
 
         @Html.HiddenFor(model => model.SourceAccountId)

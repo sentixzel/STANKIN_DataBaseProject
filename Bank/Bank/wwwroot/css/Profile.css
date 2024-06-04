@@ -80,3 +80,7 @@ p {
     color: red;
     font-size: 1.5em; /* Увеличить размер шрифта */
 }
+.alert-success {
+    color: limegreen;
+    font-size: 1.5em; /* Увеличить размер шрифта */
+}

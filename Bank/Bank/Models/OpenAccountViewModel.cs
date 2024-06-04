@@ -7,7 +7,7 @@ namespace Bank.Models
         public int?  ID_Клиента { get; set; }
         public string? ТипСчета { get; set; }
         [Required]
-        [Range(0, 100000, ErrorMessage = "Введите валидную сумму")]
+        [Range(0, 1000000, ErrorMessage = "Введите валидную сумму")]
         public decimal НачальныйБаланс { get; set; }
     }
 }

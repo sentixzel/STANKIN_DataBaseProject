@@ -37,8 +37,16 @@
       "PackagePath": "staticwebassets\\css\\StyleHome.css"
     },
     {
+      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\css\\Trans.css",
+      "PackagePath": "staticwebassets\\css\\Trans.css"
+    },
+    {
       "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\css\\cont.css",
       "PackagePath": "staticwebassets\\css\\cont.css"
+    },
+    {
+      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\css\\er.css",
+      "PackagePath": "staticwebassets\\css\\er.css"
     },
     {
       "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\css\\open.css",

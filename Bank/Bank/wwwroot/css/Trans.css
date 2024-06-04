@@ -1,0 +1,50 @@
+﻿/* Стилизация заголовка */
+h2 {
+    color: #333;
+    text-align: center;
+}
+
+/* Стилизация формы */
+.form-horizontal {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Стилизация полей ввода и меток */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.control-label {
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Стилизация кнопки */
+.btn-default {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 16px;
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #333;
+    border-radius: 3px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+    .btn-default:hover {
+        background-color: #333;
+        color: #fff;
+    }

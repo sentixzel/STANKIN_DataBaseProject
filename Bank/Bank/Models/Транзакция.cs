@@ -14,6 +14,9 @@ namespace Bank.Models
 
         public DateTime ДатаТранзакции { get; set; }
         public string? ТипТранзакции { get; set; }
+
+        [Required]
+        [Range(0.01, double.MaxValue, ErrorMessage = "Введите сумму больше нуля")]
         public decimal Сумма { get; set; }
         public string? Описание { get; set; }
     }

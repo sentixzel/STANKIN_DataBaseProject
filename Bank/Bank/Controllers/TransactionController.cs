@@ -16,6 +16,31 @@ namespace Bank.Controllers
 
     public class TransactionController : Controller
     {
+        public IActionResult Index4()
+        {
+            return View();
+
+        }
+        public IActionResult Index()
+        {
+            return View();
+
+        }
+        public IActionResult Index1()
+        {
+            return View();
+
+        }
+        public IActionResult Index2()
+        {
+            return View();
+
+        }
+        public IActionResult Index3()
+        {
+            return View();
+
+        }
         private readonly BankContext _context;
 
         public TransactionController(BankContext context)
@@ -25,6 +50,7 @@ namespace Bank.Controllers
 
         public IActionResult Create(int? accountId)
         {
+
             
             if (accountId == null)
             {
@@ -58,6 +84,21 @@ namespace Bank.Controllers
                 var sourceAccount = _context.Счета.FirstOrDefault(a => a.ID_Счета == model.SourceAccountId);
                 var destinationAccount = _context.Счета.FirstOrDefault(a => a.ID_Счета == model.DestinationAccountId);
 
+                if (model.SourceAccountId == model.DestinationAccountId)
+                {
+                    return RedirectToAction("Index3");
+
+                }
+
+                if (model.Amount <= 0)
+                {
+                    return RedirectToAction("Index1");
+                }
+                if ( model.Amount> destinationAccount.Баланс && model.TransactionType == "Deposit")
+                {
+                    return RedirectToAction("Index2");
+                    
+                }
                 if (sourceAccount == null || destinationAccount == null)
                 {
                     return NotFound("Счет не найден.");
@@ -65,6 +106,7 @@ namespace Bank.Controllers
 
                 if (sourceAccount.Баланс < model.Amount && model.TransactionType == "Withdraw")
                 {
+                    return RedirectToAction("Index");
                     ModelState.AddModelError("", "Недостаточно средств на счете для выполнения транзакции.");
                     // Повторно заполняем ClientAccounts
                     model.ClientAccounts = new SelectList(_context.Счета.Where(a => a.ID_Клиента == sourceAccount.ID_Клиента).ToList(), "ID_Счета", "НомерСчета");
@@ -104,5 +146,6 @@ namespace Bank.Controllers
 
             return View(model);
         }
+        
     }
 }

@@ -14,7 +14,7 @@ namespace Bank.Models
 
             [Required]
             [Range(0.01, double.MaxValue, ErrorMessage = "Введите сумму больше нуля")]
-            public decimal Amount { get; set; }
+        public decimal Amount { get; set; }
 
             [Required]
             [Display(Name = "Тип транзакции")]
