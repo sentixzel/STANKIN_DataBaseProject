@@ -91,7 +91,7 @@
       "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\controllers\\bankcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|c:\\users\\arina\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\stankin_databaseproject\\bank\\bank\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|C:\\Users\\Arina\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\STANKIN_DataBaseProject\\Bank\\bank\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{84688F24-3D8C-4D5E-B571-74A3F8118C1B}|Bank\\Bank.csproj|solutionrelative:bank\\views\\account\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -266,8 +266,7 @@
               "RelativeToolTip": "Bank\\Controllers\\AccountController.cs",
               "ViewState": "AQIAAOYAAAAAAAAAAAAIwAYBAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T05:58:28.305Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T05:58:28.305Z"
             },
             {
               "$type": "Document",
@@ -279,8 +278,7 @@
               "RelativeToolTip": "Bank\\Controllers\\TransactionController.cs",
               "ViewState": "AQIAAFAAAAAAAAAAAAAAwGkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T10:56:35.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T10:56:35.635Z"
             },
             {
               "$type": "Document",
@@ -292,8 +290,7 @@
               "RelativeToolTip": "Bank\\Models\\\u041A\u043B\u0438\u0435\u043D\u0442.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAowBwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T05:03:08.466Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T05:03:08.466Z"
             },
             {
               "$type": "Document",
@@ -305,8 +302,7 @@
               "RelativeToolTip": "Bank\\Models\\\u041A\u0440\u0435\u0434\u0438\u0442.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T06:52:28.238Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T06:52:28.238Z"
             },
             {
               "$type": "Document",
@@ -318,8 +314,7 @@
               "RelativeToolTip": "Bank\\Views\\_ViewStart.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T08:35:49.118Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T08:35:49.118Z"
             },
             {
               "$type": "Document",
@@ -331,8 +326,7 @@
               "RelativeToolTip": "Bank\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-06-04T05:00:45.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T05:00:45.478Z"
             },
             {
               "$type": "Document",
@@ -344,8 +338,7 @@
               "RelativeToolTip": "Bank\\Views\\Transaction\\Create.cshtml",
               "ViewState": "AQIAAAwAAAAAAAAAAAAAAAgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T12:09:19.164Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T12:09:19.164Z"
             },
             {
               "$type": "Document",
@@ -357,8 +350,7 @@
               "RelativeToolTip": "Bank\\Views\\Client\\Register.cshtml",
               "ViewState": "AQIAABIAAAAAAAAAAAAAACgAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T05:08:05.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T05:08:05.574Z"
             },
             {
               "$type": "Document",
@@ -370,8 +362,7 @@
               "RelativeToolTip": "Bank\\Views\\Account\\OpenC.cshtml",
               "ViewState": "AQIAAB4AAAAAAAAAAAAAACsAAACIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T16:52:06.901Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T16:52:06.901Z"
             },
             {
               "$type": "Document",
@@ -383,8 +374,7 @@
               "RelativeToolTip": "Bank\\Views\\Account\\OpenAccount.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T07:13:34.184Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T07:13:34.184Z"
             },
             {
               "$type": "Document",
@@ -396,8 +386,7 @@
               "RelativeToolTip": "Bank\\Models\\OpenAccountViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA0AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T07:01:49.123Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T07:01:49.123Z"
             },
             {
               "$type": "Document",
@@ -409,8 +398,7 @@
               "RelativeToolTip": "Bank\\Models\\ErrorViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T14:23:06.546Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T14:23:06.546Z"
             },
             {
               "$type": "Document",
@@ -422,8 +410,7 @@
               "RelativeToolTip": "Bank\\Models\\\u0421\u0447\u0435\u0442.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T06:52:23.756Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T06:52:23.756Z"
             },
             {
               "$type": "Document",
@@ -435,8 +422,7 @@
               "RelativeToolTip": "Bank\\Models\\\u0421\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u043A.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T07:17:32.635Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T07:17:32.635Z"
             },
             {
               "$type": "Document",
@@ -452,6 +438,10 @@
               "EditorCaption": ""
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "HomeController.cs",
@@ -461,8 +451,7 @@
               "RelativeToolTip": "Bank\\Controllers\\HomeController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T14:23:03.81Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T14:23:03.81Z"
             },
             {
               "$type": "Document",
@@ -474,8 +463,7 @@
               "RelativeToolTip": "Bank\\Controllers\\ContactsController.cs",
               "ViewState": "AQIAADUAAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T11:31:43.518Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T11:31:43.518Z"
             },
             {
               "$type": "Document",
@@ -487,12 +475,7 @@
               "RelativeToolTip": "Bank\\Controllers\\ClientController.cs",
               "ViewState": "AQIAAC4AAAAAAAAAAAAgwDoAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T05:58:29.948Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "WhenOpened": "2024-06-04T05:58:29.948Z"
             },
             {
               "$type": "Document",
@@ -504,8 +487,7 @@
               "RelativeToolTip": "Bank\\Models\\Open\u0421reditModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T16:14:04.934Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T16:14:04.934Z"
             },
             {
               "$type": "Document",
@@ -517,8 +499,7 @@
               "RelativeToolTip": "Bank\\Views\\Account\\OpenS.cshtml",
               "ViewState": "AQIAABUAAAAAAAAAAAAAACkAAACJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T07:38:16.27Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T07:38:16.27Z"
             },
             {
               "$type": "Document",
@@ -530,8 +511,7 @@
               "RelativeToolTip": "Bank\\Models\\TransactionViewModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T10:48:23.385Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T10:48:23.385Z"
             },
             {
               "$type": "Document",
@@ -543,8 +523,7 @@
               "RelativeToolTip": "Bank\\Controllers\\BankController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T14:58:32.211Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T14:58:32.211Z"
             },
             {
               "$type": "Document",
@@ -556,8 +535,7 @@
               "RelativeToolTip": "Bank\\Views\\Account\\Profile.cshtml",
               "ViewState": "AQIAAEgAAAAAAAAAAAAAAFEAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T06:39:54.371Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T06:39:54.371Z"
             },
             {
               "$type": "Document",
@@ -569,8 +547,7 @@
               "RelativeToolTip": "Bank\\Models\\\u041E\u0442\u0434\u0435\u043B\u0435\u043D\u0438\u0435\u0411\u0430\u043D\u043A\u0430.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T07:17:28.174Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T07:17:28.174Z"
             },
             {
               "$type": "Document",
@@ -582,8 +559,7 @@
               "RelativeToolTip": "Bank\\Models\\Contact.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-04T07:18:58.168Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T07:18:58.168Z"
             },
             {
               "$type": "Document",
@@ -595,8 +571,7 @@
               "RelativeToolTip": "Bank\\Views\\Client\\EndRegister.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T14:33:13.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T14:33:13.617Z"
             },
             {
               "$type": "Document",
@@ -608,8 +583,7 @@
               "RelativeToolTip": "Bank\\Views\\Client\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T05:59:12.066Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T05:59:12.066Z"
             },
             {
               "$type": "Document",
@@ -621,8 +595,7 @@
               "RelativeToolTip": "Bank\\Views\\Contacts\\Index.cshtml",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-04T06:22:37.892Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-04T06:22:37.892Z"
             },
             {
               "$type": "Document",
