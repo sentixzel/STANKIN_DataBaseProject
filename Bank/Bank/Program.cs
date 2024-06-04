@@ -2,10 +2,15 @@ using Bank.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Data.SqlClient;
 using Microsoft.AspNetCore.Identity;
-
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+/// Настройка Identity
+
+
 builder.Services.AddScoped<IPasswordHasher<Клиент>, PasswordHasher<Клиент>>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BankContext>(options =>
@@ -34,3 +39,7 @@ app.MapControllerRoute(
 
 
 app.Run();
+builder.Services.AddIdentity<Клиент, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true);
+
+  
+            ;

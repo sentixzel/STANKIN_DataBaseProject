@@ -1,38 +1,57 @@
 ﻿@model TransactionViewModel
 
-<h2>Транзакции для счета @Model.AccountNumber</h2>
+<h2>Создание Транзакции</h2>
 
-<form asp-action="Create">
-    <div class="form-group">
-        <label asp-for="SourceAccountNumber"></label>
-        <input asp-for="SourceAccountNumber" class="form-control" />
-        <span asp-validation-for="SourceAccountNumber" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="TargetAccountNumber"></label>
-        <input asp-for="TargetAccountNumber" class="form-control" />
-        <span asp-validation-for="TargetAccountNumber" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="Amount"></label>
-        <input asp-for="Amount" class="form-control" />
-        <span asp-validation-for="Amount" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="TransactionType"></label>
-        <select asp-for="TransactionType" class="form-control">
-            <option value="Withdraw">Снять</option>
-            <option value="Deposit">Пополнить</option>
-        </select>
-        <span asp-validation-for="TransactionType" class="text-danger"></span>
-    </div>
-    <button type="submit" class="btn btn-primary">Отправить</button>
-</form>
-
-@section Scripts
+@using (Html.BeginForm())
 {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}
+    @Html.AntiForgeryToken()
 
+    <div class="form-horizontal">
+        <h4>Транзакция</h4>
+        <hr />
+
+        @Html.HiddenFor(model => model.SourceAccountId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DestinationAccountId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DestinationAccountId, Model.ClientAccounts, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DestinationAccountId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TransactionType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.TransactionType, new SelectList(new List<SelectListItem>
+            {
+            new SelectListItem { Text = "Перевод", Value = "Withdraw" },
+            new SelectListItem { Text = "Пополнение", Value = "Deposit" }
+            }, "Value", "Text"), new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.TransactionType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Создать" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

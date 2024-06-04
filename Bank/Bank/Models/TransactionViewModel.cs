@@ -1,29 +1,29 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 
 namespace Bank.Models
 {
-    public class TransactionViewModel
-    {
-        public int AccountId { get; set; }
+   
+        public class TransactionViewModel
+        {
+            public int SourceAccountId { get; set; }
 
-        [Required]
-        [Display(Name = "Номер счета источника")]
-        public string SourceAccountNumber { get; set; }
+            [Required]
+            [Display(Name = "Счет назначения")]
+            public int DestinationAccountId { get; set; }
 
-        [Required]
-        [Display(Name = "Номер счета получателя")]
-        public string TargetAccountNumber { get; set; }
+            [Required]
+            [Range(0.01, double.MaxValue, ErrorMessage = "Введите сумму больше нуля")]
+            public decimal Amount { get; set; }
 
-        [Required]
-        [Range(0, 100000, ErrorMessage = "Введите валидную сумму")]
-        [Display(Name = "Сумма")]
-        public decimal Amount { get; set; }
+            [Required]
+            [Display(Name = "Тип транзакции")]
+            public string TransactionType { get; set; } // "Withdraw" или "Deposit"
 
-        [Required]
-        [Display(Name = "Тип транзакции")]
-        public string TransactionType { get; set; }
+            [StringLength(500, ErrorMessage = "Описание не должно превышать 500 символов")]
+            public string? Description { get; set; }
 
-        public string AccountNumber { get; set; }
-        public decimal Balance { get; set; }
-    }
+            public SelectList ClientAccounts { get; set; }
+        }
+    
 }

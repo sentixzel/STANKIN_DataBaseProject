@@ -1,9 +1,10 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Bank.Models
 {
 	public class Клиент
-	{
+    {
 		[Key]
 
 		public int ID_Клиента { get; set; }
