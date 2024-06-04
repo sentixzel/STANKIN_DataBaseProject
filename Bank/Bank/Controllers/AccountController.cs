@@ -241,7 +241,7 @@ namespace Bank.Controllers
                     otherAccounts.First().Баланс += model.СуммаКредита;
 
 
-                    _context.SaveChanges();
+                    
 
                     TempData["Message"] = "Кредит успешно взят, и сумма была переведена на счёт.";
                 }
