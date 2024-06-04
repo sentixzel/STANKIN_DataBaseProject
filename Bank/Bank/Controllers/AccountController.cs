@@ -220,7 +220,7 @@ namespace Bank.Controllers
 
                 if (currentAccounts.Count >= 2)
                 {
-                    ModelState.AddModelError("OpenAccount", "Вы не можете взять больше 2 кредитов.");
+                   // ModelState.AddModelError("OpenAccount", "Вы не можете взять больше 2 кредитов.");
                     return View("OpenAccount", model);
                 }
 
@@ -241,7 +241,7 @@ namespace Bank.Controllers
                     otherAccounts.First().Баланс += model.СуммаКредита;
 
 
-                    
+
 
                     TempData["Message"] = "Кредит успешно взят, и сумма была переведена на счёт.";
                 }

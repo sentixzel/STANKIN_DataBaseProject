@@ -8,27 +8,27 @@
 <div class="form-container">
     <h2 class="form-title">Взятие кредита</h2>
 
-    <form asp-action="OpenAccount" method="post">
+    <form asp-action="OpenCredit" method="post">
         <input type="hidden" name="ID_Клиента" value="@Model.ID_Клиента" />
 
         <div class="form-group">
             <label>Тип кредита</label>
             <div>
-                <input type="radio" id="typeCurrent" name="ТипКредита" value="Долгосрочный  5 лет" class="radio-input" style="display: none;" checked />
+                <input type="radio" id="typeCurrent" name="ТипКредита" value="Долгосрочный  5 лет 12%" class="radio-input" style="display: none;" checked />
                 <label for="typeCurrent" class="radio-label">
                     <img src="/img/Credit/1.jpg" alt="Долгосрочный 5 года" />
                     <div class="overlay-text">Долгосрочный 5 года</div>
                 </label>
             </div>
             <div>
-                <input type="radio" id="typeSavings2" name="ТипКредита" value="Среднесрочный 3 года" class="radio-input" style="display: none;" />
+                <input type="radio" id="typeSavings2" name="ТипКредита" value="Среднесрочный 3 года 16%" class="radio-input" style="display: none;" />
                 <label for="typeSavings2" class="radio-label">
                     <img src="/img/Credit/2.jpg" alt="Среднесрочный 3 года" />
                     <div class="overlay-text">Среднесрочный 3 года</div>
                 </label>
             </div>
             <div>
-                <input type="radio" id="typeSavings3" name="ТипКредита" value="Краткосрочный 1 год" class="radio-input" style="display: none;" />
+                <input type="radio" id="typeSavings3" name="ТипКредита" value="Краткосрочный 1 год 25%" class="radio-input" style="display: none;" />
                 <label for="typeSavings3" class="radio-label">
                     <img src="/img/Credit/3.jpg" alt="Краткосрочный 1 год" />
                     <div class="overlay-text">Краткосрочный 1 год</div>
@@ -63,6 +63,6 @@
             </div>
         </div>
 
-        <button type="submit" class="submit-button">Открыть</button>
+        <button type="submit" class="submit-button">Взять</button>
     </form>
 </div>
