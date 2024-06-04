@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -137,11 +138,12 @@ namespace Bank.Controllers
             ModelState.AddModelError("OpenAccount", "Не удалось найти пользователя.");
             return View("OpenAccount", model);
         }
-
+        int tupa;
         // Метод для удаления счета
         [HttpPost]
         public IActionResult DeleteAccount(int accountId, int клиентId)
         {
+            tupa = accountId;
             var accountToDelete = _context.Счета.FirstOrDefault(a => a.ID_Счета == accountId && a.Клиент.ID_Клиента == клиентId);
 
             if (accountToDelete != null)
@@ -162,11 +164,12 @@ namespace Bank.Controllers
                 {
                     TempData["Error"] = "Удаление невозможно, так как это единственный счёт клиента.";
                 }
+
             }
 
             return RedirectToAction("Profile", new { id = клиентId });
         }
-
+        
         // Метод для генерации номера счета
         private string GenerateAccountNumber()
         {
@@ -176,6 +179,85 @@ namespace Bank.Controllers
 
 
 
+
+
+
+
+
+        // Метод для отображения формы открытия 
+        [HttpGet]
+        public IActionResult OpenC(int id)
+        {
+            // Вывод id для проверки
+            Console.WriteLine($"Поступившее ID_Клиента: {id}");
+
+            var model = new OpenСreditModel { ID_Клиента = id };
+            return View(model);
+        }
+
+
+
+
+
+        // Метод для обработки открытия кредита
+        [HttpPost]
+        public IActionResult OpenCredit(OpenСreditModel model)
+        {
+
+
+            if (model.ID_Клиента == null || model.ID_Клиента == 0)
+            {
+                ModelState.AddModelError("Login", "Не найден ID клиента.");
+                return View(model);
+            }
+
+            var currentUser = _context.Клиенты.FirstOrDefault(c => c.ID_Клиента == model.ID_Клиента.Value);
+
+
+            if (currentUser != null)
+            {
+                var currentAccounts = _context.Кредиты.Where(a => a.Клиент.ID_Клиента == currentUser.ID_Клиента).ToList();
+
+                if (currentAccounts.Count >= 2)
+                {
+                    ModelState.AddModelError("OpenAccount", "Вы не можете взять больше 2 кредитов.");
+                    return View("OpenAccount", model);
+                }
+
+                var account = new Кредит
+                {
+                    Клиент = currentUser,
+                    ТипКредита = model.ТипКредита,
+                    ОсновнаяСумма = model.СуммаКредита,
+                    ДатаНачала = DateTime.Now,
+                    // НомерСчета = GenerateAccountNumber()
+
+                };
+                var otherAccounts = _context.Счета.Where(a => a.Клиент.ID_Клиента == model.ID_Клиента && a.ID_Счета != tupa).ToList();
+
+                if (otherAccounts.Any())
+                {
+                    // Переводим баланс на первый из доступных счетов
+                    otherAccounts.First().Баланс += model.СуммаКредита;
+
+
+                    _context.SaveChanges();
+
+                    TempData["Message"] = "Кредит успешно взят, и сумма была переведена на счёт.";
+                }
+                else
+                {
+                    TempData["Error"] = "Взять кредит не удалось, нет подходящих счетов";
+                }
+
+                _context.Кредиты.Add(account);
+                _context.SaveChanges();
+                return RedirectToAction("Profile", new { id = currentUser.ID_Клиента });
+            }
+
+            ModelState.AddModelError("OpenAccount", "Не удалось найти пользователя.");
+            return View("OpenAccount", model);
+        }
 
 
 

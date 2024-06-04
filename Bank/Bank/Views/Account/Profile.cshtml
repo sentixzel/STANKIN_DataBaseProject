@@ -73,6 +73,7 @@
                 <th>Дата Начала</th>
                 <th>Дата Окончания</th>
                 <th>Статус</th>
+               
             </tr>
         </thead>
         <tbody>
@@ -90,5 +91,8 @@
             }
         </tbody>
     </table>
+    <button class="btn-open-account" onclick="location.href='@Url.Action("OpenCredit", "Account", new { id = Model.Клиент.ID_Клиента })';">
+        Взять кредит
+    </button>
 </div>
 
