@@ -10,9 +10,9 @@ namespace Bank.Models
 
         [ForeignKey("Клиент")]
         public int ID_Клиента { get; set; }
-        public virtual Клиент Клиент { get; set; }
+        public virtual Клиент? Клиент { get; set; }
 
-        public string ТипКредита { get; set; }
+        public string? ТипКредита { get; set; }
         public decimal ОсновнаяСумма { get; set; }
         public decimal ПроцентнаяСтавка { get; set; }
 

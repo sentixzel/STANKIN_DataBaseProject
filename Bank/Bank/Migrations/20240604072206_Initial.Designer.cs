@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bank.Migrations
 {
     [DbContext(typeof(BankContext))]
-    [Migration("20240604051143_Initial")]
+    [Migration("20240604072206_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -93,7 +93,6 @@ namespace Bank.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ТипКредита")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID_Кредита");
@@ -115,15 +114,12 @@ namespace Bank.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Адрес")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("НазваниеОтделения")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("НомерТелефона")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID_Отделения");
@@ -170,27 +166,21 @@ namespace Bank.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ДатаНаима")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Должность")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Имя")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("НомерТелефона")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Фамилия")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ЭлектроннаяПочта")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID_Сотрудника");
@@ -217,8 +207,10 @@ namespace Bank.Migrations
                     b.Property<DateTime>("ДатаСоздания")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("НомерСчета")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ТипСчета")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID_Счета");
@@ -243,14 +235,12 @@ namespace Bank.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Описание")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Сумма")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("ТипТранзакции")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID_Транзакции");

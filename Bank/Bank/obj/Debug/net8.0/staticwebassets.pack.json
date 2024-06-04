@@ -37,6 +37,18 @@
       "PackagePath": "staticwebassets\\css\\StyleHome.css"
     },
     {
+      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\css\\cont.css",
+      "PackagePath": "staticwebassets\\css\\cont.css"
+    },
+    {
+      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\css\\open.css",
+      "PackagePath": "staticwebassets\\css\\open.css"
+    },
+    {
+      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\css\\shet.css",
+      "PackagePath": "staticwebassets\\css\\shet.css"
+    },
+    {
       "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -63,6 +75,42 @@
     {
       "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\3.jpg",
       "PackagePath": "staticwebassets\\img\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\Shet\\1.jpg",
+      "PackagePath": "staticwebassets\\img\\Shet\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\Shet\\2.jpg",
+      "PackagePath": "staticwebassets\\img\\Shet\\2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\Shet\\3.jpg",
+      "PackagePath": "staticwebassets\\img\\Shet\\3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\Shet\\balance\\100.jpg",
+      "PackagePath": "staticwebassets\\img\\Shet\\balance\\100.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\Shet\\balance\\1000.jpg",
+      "PackagePath": "staticwebassets\\img\\Shet\\balance\\1000.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\Shet\\balance\\10000.jpg",
+      "PackagePath": "staticwebassets\\img\\Shet\\balance\\10000.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\Shet\\balance\\100000.jpg",
+      "PackagePath": "staticwebassets\\img\\Shet\\balance\\100000.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\Shet\\balance\\500.jpg",
+      "PackagePath": "staticwebassets\\img\\Shet\\balance\\500.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\Shet\\balance\\5000.jpg",
+      "PackagePath": "staticwebassets\\img\\Shet\\balance\\5000.jpg"
     },
     {
       "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\home\\1.jpg",

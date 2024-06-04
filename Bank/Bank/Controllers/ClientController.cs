@@ -53,7 +53,10 @@ namespace Bank.Controllers
                         ЭлектроннаяПочта = model.ЭлектроннаяПочта,
                         ID_Отделения = model.ID_Отделения,
                         PhoneNumber = model.PhoneNumber
+     
                     };
+
+                    
 
                     // Хэшируем пароль
                     клиент.Пароль = _passwordHasher.HashPassword(клиент, model.Пароль);

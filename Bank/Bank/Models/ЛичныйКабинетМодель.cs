@@ -2,13 +2,15 @@
 {
     public class ЛичныйКабинетМодель
     {
-        public Клиент Клиент { get; set; }
-        public string Имя { get; set; }
-        public string Фамилия { get; set; }
-        public string ЭлектроннаяПочта { get; set; }
+        public Клиент? Клиент { get; set; }
+        public string? Имя { get; set; }
+        public string? Фамилия { get; set; }
+        public string? ЭлектроннаяПочта { get; set; }
         public DateTime ДатаРождения { get; set; }
-        public List<Счет> Счета { get; set; }
-        public List<Кредит> Кредиты { get; set; }
+        public List<Счет>? Счета { get; set; }
+        public List<Кредит>? Кредиты { get; set; }
+
+        public string? otdel { get; set; }
     }
 
     //public class СчетViewModel

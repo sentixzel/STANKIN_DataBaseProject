@@ -1,0 +1,38 @@
+﻿@model TransactionViewModel
+
+<h2>Транзакции для счета @Model.AccountNumber</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="SourceAccountNumber"></label>
+        <input asp-for="SourceAccountNumber" class="form-control" />
+        <span asp-validation-for="SourceAccountNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TargetAccountNumber"></label>
+        <input asp-for="TargetAccountNumber" class="form-control" />
+        <span asp-validation-for="TargetAccountNumber" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Amount"></label>
+        <input asp-for="Amount" class="form-control" />
+        <span asp-validation-for="Amount" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TransactionType"></label>
+        <select asp-for="TransactionType" class="form-control">
+            <option value="Withdraw">Снять</option>
+            <option value="Deposit">Пополнить</option>
+        </select>
+        <span asp-validation-for="TransactionType" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

@@ -36,9 +36,9 @@ namespace Bank.Migrations
                 {
                     ID_Отделения = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    НазваниеОтделения = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Адрес = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    НомерТелефона = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    НазваниеОтделения = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Адрес = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    НомерТелефона = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Photo = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -53,7 +53,7 @@ namespace Bank.Migrations
                     ID_Кредита = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ID_Клиента = table.Column<int>(type: "int", nullable: false),
-                    ТипКредита = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ТипКредита = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ОсновнаяСумма = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ПроцентнаяСтавка = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Статус = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -78,7 +78,8 @@ namespace Bank.Migrations
                     ID_Счета = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ID_Клиента = table.Column<int>(type: "int", nullable: false),
-                    ТипСчета = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    НомерСчета = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ТипСчета = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Баланс = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     ДатаСоздания = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -99,12 +100,12 @@ namespace Bank.Migrations
                 {
                     ID_Сотрудника = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Имя = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Фамилия = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Должность = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ЭлектроннаяПочта = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    НомерТелефона = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ДатаНаима = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Имя = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Фамилия = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Должность = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ЭлектроннаяПочта = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    НомерТелефона = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ДатаНаима = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Photo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ID_Отделения = table.Column<int>(type: "int", nullable: false)
                 },
@@ -148,9 +149,9 @@ namespace Bank.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ID_Счета = table.Column<int>(type: "int", nullable: false),
                     ДатаТранзакции = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ТипТранзакции = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ТипТранзакции = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Сумма = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Описание = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Описание = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

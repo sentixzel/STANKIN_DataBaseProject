@@ -10,7 +10,7 @@ namespace Bank.Models
 
         [ForeignKey("Кредит")]
         public int ID_Кредита { get; set; }
-        public virtual Кредит Кредит { get; set; }
+        public virtual Кредит? Кредит { get; set; }
 
         public DateTime ДатаПлатежа { get; set; }
         public decimal СуммаПлатежа { get; set; }

@@ -1,41 +1,71 @@
 ﻿@model ЛичныйКабинетМодель
 <link rel="stylesheet" href="~/css/Profile.css" asp-append-version="true" />
-<h2>Личный кабинет</h2>
+<h2 class="section-title">Личный кабинет</h2>
 
-    <div class="main-section">
-        <h3>Клиент</h3>
-        <p>Имя: @Model.Клиент.Имя</p>
-        <p>Фамилия: @Model.Клиент.Фамилия</p>
-        <p>Электронная почта: @Model.Клиент.ЭлектроннаяПочта</p>
-    </div>
 
-    <div class="main-section">
-        <h3>Счета</h3>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ID Счета</th>
-                    <th>Тип Счета</th>
-                    <th>Баланс</th>
-                    <th>Дата Создания</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var счет in Model.Счета)
+
+<div class="main-section">
+    <h3 class="section-subtitle">Клиент</h3>
+    <p>Имя: @Model.Клиент.Имя</p>
+    <p>Фамилия: @Model.Клиент.Фамилия</p>
+    <p>Электронная почта: @Model.Клиент.ЭлектроннаяПочта</p>
+    <p>Отделение: @Model.otdel</p>
+</div>
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"]</div>
+}
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+<div class="main-section">
+    <h3 class="section-subtitle">Счета</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                
+                <th>Номер Счета</th>
+                <th>Тип Счета</th>
+                <th>Баланс</th>
+                <th>Дата Создания</th>
+                <th>Транзакции</th> <!-- Новая колонка -->
+                <th>Удалить</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var счет in Model.Счета)
             {
                 <tr>
-                    <td>@счет.ID_Счета</td>
+                   
+                    <td>@счет.НомерСчета</td>
                     <td>@счет.ТипСчета</td>
                     <td>@счет.Баланс</td>
                     <td>@счет.ДатаСоздания</td>
+                    <td>
+                        <button class="btn-open-account" onclick="location.href='@Url.Action("Create", "Transaction", new { accountId = счет.ID_Счета })';">
+                            Транзакции
+                        </button>
+                    </td>
+                    <td>
+                        <form asp-action="DeleteAccount" method="post" onsubmit="return confirm('Вы уверены, что хотите удалить этот счёт?');">
+                            <input type="hidden" name="accountId" value="@счет.ID_Счета" />
+                            <input type="hidden" name="клиентId" value="@Model.Клиент.ID_Клиента" />
+                            <button class="btn-open-account" type="submit" class="btn btn-danger">Удалить</button>
+                        </form>
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
+    <button class="btn-open-account" onclick="location.href='@Url.Action("OpenS", "Account", new { id = Model.Клиент.ID_Клиента })';">
+        Открыть счет
+    </button>
+</div>
 </div>
 
 <div class="main-section">
-    <h3>Кредиты</h3>
+    <h3 class="section-subtitle">Кредиты</h3>
     <table class="table">
         <thead>
             <tr>
@@ -64,3 +94,4 @@
         </tbody>
     </table>
 </div>
+

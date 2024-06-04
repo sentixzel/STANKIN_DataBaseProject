@@ -10,12 +10,15 @@ namespace Bank.Models
 
         [ForeignKey("Клиент")]
         public int ID_Клиента { get; set; }
-        public virtual Клиент Клиент { get; set; }
+        public string? НомерСчета { get; set; }
+        public virtual Клиент? Клиент { get; set; }
 
-        public string ТипСчета { get; set; }
+        public string? ТипСчета { get; set; }
+        [Required]
+        [Range(0, 100000, ErrorMessage = "Введите валидную сумму")]
         public decimal Баланс { get; set; }
         public DateTime ДатаСоздания { get; set; }
 
-        public virtual ICollection<Транзакция> Транзакции { get; set; }
+        public virtual ICollection<Транзакция>? Транзакции { get; set; }
     }
 }
