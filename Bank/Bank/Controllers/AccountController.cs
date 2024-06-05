@@ -220,36 +220,7 @@ namespace Bank.Controllers
 
                 
 
-                if (model.ТипКредита == "Долгосрочный  5 лет")
-                {
-                    model.ПроцентнаяСтавка = 14;
-                    model.ДатаОкончания = DateTime.Now;
-                    model.ДатаОкончания = model.ДатаОкончания.AddMonths(60);
-                    model.СуммаКредита = model.СуммаКредита* Convert.ToDecimal(1.14);
-                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
-                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
-                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
-                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
-
-                }
-                else
-                    if (model.ТипКредита == "Среднесрочный 3 года")
-                {
-                    model.ПроцентнаяСтавка = 18;
-                  
-                    model.ДатаОкончания = DateTime.Now;
-                    model.ДатаОкончания = model.ДатаОкончания.AddMonths(48);
-                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.18);
-                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.18);
-                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.18);
-                }
-                else
-                {
-                    model.ПроцентнаяСтавка = 26;
-                    model.ДатаОкончания = DateTime.Now;
-                    model.ДатаОкончания = model.ДатаОкончания.AddMonths(12);
-                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.26);
-                }
+                
                 
 
                 var account = new Кредит
@@ -293,6 +264,43 @@ namespace Bank.Controllers
                     _context.Кредиты.Add(account);
                     
                     TempData["Error"] = "Взять кредит не удалось, нет подходящих счетов";
+                }
+                if (model.ТипКредита == "Долгосрочный  5 лет")
+                {
+                    model.ПроцентнаяСтавка = 14;
+                    account.ПроцентнаяСтавка = model.ПроцентнаяСтавка;
+                    model.ДатаОкончания = DateTime.Now;
+                    model.ДатаОкончания = model.ДатаОкончания.AddMonths(60);
+                    account.ДатаОкончания = model.ДатаОкончания;
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
+                    account.ОсновнаяСумма = model.СуммаКредита;
+                }
+                else
+                    if (model.ТипКредита == "Среднесрочный 3 года")
+                {
+                    model.ПроцентнаяСтавка = 18;
+                    account.ПроцентнаяСтавка = model.ПроцентнаяСтавка;
+                    model.ДатаОкончания = DateTime.Now;
+                    model.ДатаОкончания = model.ДатаОкончания.AddMonths(48);
+                    account.ДатаОкончания = model.ДатаОкончания;
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.18);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.18);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.18);
+                    account.ОсновнаяСумма = model.СуммаКредита;
+                }
+                else
+                {
+                    model.ПроцентнаяСтавка = 26;
+                    account.ПроцентнаяСтавка = model.ПроцентнаяСтавка;
+                    model.ДатаОкончания = DateTime.Now;
+                    model.ДатаОкончания = model.ДатаОкончания.AddMonths(12);
+                    account.ДатаОкончания = model.ДатаОкончания;
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.26);
+                    account.ОсновнаяСумма = model.СуммаКредита;
                 }
 
                 _context.Кредиты.Add(account);

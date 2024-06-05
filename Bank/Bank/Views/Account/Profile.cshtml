@@ -90,12 +90,16 @@
                     <td>@кредит.Статус</td>
                     <td>
                         <button class="btn-open-account" onclick="location.href='@Url.Action("RepayC", "Repay", new { creditId = кредит.ID_Кредита })';">Погасить</button>
+                    </td>
                     <td>
-                        <form asp-action="DeleteCredit" method="post" onsubmit="return confirm('Убрать этот кредит?');">
-                            <input type="hidden" name="creditId" value="@кредит.ID_Кредита" />
-                            <input type="hidden" name="клиентId" value="@Model.Клиент.ID_Клиента" />
-                            <button class="btn-open-account" type="submit" class="btn btn-danger">Удалить</button>
-                        </form>
+                        @if (кредит.Статус == "Погашен досрочно" || кредит.Статус == "Отменен")
+                        {
+                            <form asp-action="DeleteCredit" method="post" onsubmit="return confirm('Убрать этот кредит?');">
+                                <input type="hidden" name="creditId" value="@кредит.ID_Кредита" />
+                                <input type="hidden" name="клиентId" value="@Model.Клиент.ID_Клиента" />
+                                <button class="btn-open-account" type="submit" class="btn btn-danger">Удалить</button>
+                            </form>
+                        }
                     </td>
                 </tr>
             }

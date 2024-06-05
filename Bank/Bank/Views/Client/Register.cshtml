@@ -1,24 +1,24 @@
 ﻿@model Клиент
+
 <link rel="stylesheet" href="~/css/Register.css" asp-append-version="true" />
 
 <div class="container">
     <h2>Регистрация</h2>
 
     <form asp-action="Register" method="post" onsubmit="return validateCheckboxes()">
-        
         <div class="form-group">
             <label asp-for="Имя">Имя</label>
-            <input asp-for="Имя" class="form-control" />
+            <input asp-for="Имя" class="form-control" placeholder="Иван" />
             <span asp-validation-for="Имя" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Фамилия">Фамилия</label>
-            <input asp-for="Фамилия" class="form-control" />
+            <input asp-for="Фамилия" class="form-control" placeholder="Иванов" />
             <span asp-validation-for="Фамилия" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="PhoneNumber">Номер телефона</label>
-            <input asp-for="PhoneNumber" class="form-control" />
+            <input asp-for="PhoneNumber" class="form-control" placeholder="+7 123 456 7890" />
             <span asp-validation-for="PhoneNumber" class="text-danger"></span>
         </div>
         <div class="form-group">
@@ -28,18 +28,18 @@
         </div>
         <div class="form-group">
             <label asp-for="ЭлектроннаяПочта">Электронная Почта</label>
-            <input asp-for="ЭлектроннаяПочта" class="form-control" />
+            <input asp-for="ЭлектроннаяПочта" class="form-control" placeholder="example@domain.com" />
             <span asp-validation-for="ЭлектроннаяПочта" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Пароль">Пароль</label>
-            <input asp-for="Пароль" class="form-control" type="password" />
+            <input asp-for="Пароль" class="form-control" type="password" placeholder="Your password" />
             <span asp-validation-for="Пароль" class="text-danger"></span>
         </div>
         <div class="form-group hidden">
             <input type="hidden" asp-for="ID_Отделения" />
         </div>
-        
+
         <div class="form-check">
             <input id="СогласиеНаОбработкуПерсональныхДанных" class="form-check-input" type="checkbox" />
             <label for="СогласиеНаОбработкуПерсональныхДанных" class="form-check-label">
