@@ -1,14 +1,19 @@
 ﻿using Bank.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Bank.Controllers
 {
+   
     public class AccountController : Controller
     {
         private readonly BankContext _context;
@@ -20,6 +25,8 @@ namespace Bank.Controllers
             _passwordHasher = passwordHasher ?? throw new ArgumentNullException(nameof(passwordHasher));
         }
 
+        
+        //-----------
         public IActionResult Index()
         {
             return View();
@@ -33,8 +40,7 @@ namespace Bank.Controllers
         [HttpPost]
         public IActionResult Login(string email, string password)
         {
-            var клиент = _context.Клиенты
-                .FirstOrDefault(k => k.ЭлектроннаяПочта == email);
+            var клиент = _context.Клиенты.FirstOrDefault(k => k.ЭлектроннаяПочта == email);
 
             if (клиент != null)
             {
@@ -42,49 +48,71 @@ namespace Bank.Controllers
 
                 if (result == PasswordVerificationResult.Success)
                 {
-                    // Авторизация успешна, перенаправляем в личный кабинет
-                    return RedirectToAction("Profile", new { id = клиент.ID_Клиента });
+                    var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, клиент.ЭлектроннаяПочта),
+                    new Claim("ClientId", клиент.ID_Клиента.ToString())
+                };
+
+                    var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    var authProperties = new AuthenticationProperties();
+
+                    HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
+
+                    return RedirectToAction("Profile");
                 }
             }
 
-            // Авторизация неуспешна, обратно на страницу входа с ошибкой
             ModelState.AddModelError("", "Неверная электронная почта или пароль.");
             return View("Login");
         }
+       // [Authorize]
+      
 
-        public IActionResult Profile(int id)
+       [Authorize]
+        public IActionResult Profile()
         {
-            var клиент = _context.Клиенты.FirstOrDefault(k => k.ID_Клиента == id);
-            var счета = _context.Счета.Where(s => s.ID_Клиента == id).ToList();
-            var кредиты = _context.Кредиты.Where(c => c.ID_Клиента == id).ToList();
+            var клиентId = int.Parse(User.Claims.First(c => c.Type == "ClientId").Value);
+
+            var клиент = _context.Клиенты.FirstOrDefault(k => k.ID_Клиента == клиентId);
+            var счета = _context.Счета.Where(s => s.ID_Клиента == клиентId).ToList();
+            var кредиты = _context.Кредиты.Where(c => c.ID_Клиента == клиентId).ToList();
 
             var модель = new ЛичныйКабинетМодель
             {
                 Клиент = клиент,
                 Счета = счета,
                 Кредиты = кредиты
-
             };
+
             if (клиент.ID_Отделения == 1)
             {
                 модель.otdel = "Ботаническая улица 41к7";
             }
-            else
-                if (клиент.ID_Отделения == 2)
+            else if (клиент.ID_Отделения == 2)
             {
                 модель.otdel = "Строгинский бульвар 12";
             }
             else
+            {
                 модель.otdel = "Студенческая улица 33";
+            }
 
             return View(модель);
         }
 
+        public IActionResult Logout()
+        {
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login");
+        }
 
+        //-----------
 
 
 
         // Метод для отображения формы открытия счета
+        //[Authorize]
         [HttpGet]
         public IActionResult OpenS(int id)
         {
@@ -96,6 +124,7 @@ namespace Bank.Controllers
         }
 
         // Метод для обработки открытия счета
+        //[Authorize]
         [HttpPost]
         public IActionResult OpenAccount(OpenAccountViewModel model)
         {

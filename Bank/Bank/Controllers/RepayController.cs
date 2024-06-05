@@ -1,10 +1,12 @@
 ﻿using Bank.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Data;
 
 namespace Bank.Controllers
 {
+    
     public class RepayController : Controller
     {
         public IActionResult Index()

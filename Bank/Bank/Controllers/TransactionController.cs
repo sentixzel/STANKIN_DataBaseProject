@@ -13,8 +13,8 @@ using System.Threading.Tasks;
 using System;
 namespace Bank.Controllers
 {
-
-    public class TransactionController : Controller
+   
+    public class TransactionController :Controller
     {
         public IActionResult Index4()
         {
