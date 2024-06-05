@@ -1,10 +1,6 @@
 {
   "Version": 1,
-<<<<<<< HEAD
-  "Hash": "u3/qjQgE0HSC+/HG2/wDjf35Y55f9qMPTknCqeZ5/l8=",
-=======
-  "Hash": "KZToGcj48kwu9ZYue9FrmLn1/+UCgNvYod/xQ2W729M=",
->>>>>>> 006b17be4bd6b4872de59c46ab5f8c7cffe9fc2e
+  "Hash": "WtEOr76aa2uQsn33ynp38BpQO/Hq+jQUE9mBH+2FNLQ=",
   "Source": "Bank",
   "BasePath": "_content/Bank",
   "Mode": "Default",
@@ -439,11 +435,10 @@
       "OriginalItemSpec": "wwwroot\\img\\3.jpg"
     },
     {
-<<<<<<< HEAD
-      "Identity": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\black.jpg",
+      "Identity": "C:\\Users\\Admin\\source\\repos\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\black.jpg",
       "SourceId": "Bank",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\",
       "BasePath": "_content/Bank",
       "RelativePath": "img/black.jpg",
       "AssetKind": "All",
@@ -459,10 +454,7 @@
       "OriginalItemSpec": "wwwroot\\img\\black.jpg"
     },
     {
-      "Identity": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\Credit\\1.jpg",
-=======
       "Identity": "C:\\Users\\Admin\\source\\repos\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\Credit\\1.jpg",
->>>>>>> 006b17be4bd6b4872de59c46ab5f8c7cffe9fc2e
       "SourceId": "Bank",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Admin\\source\\repos\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\",

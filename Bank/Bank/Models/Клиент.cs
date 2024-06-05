@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Bank.Models
@@ -13,31 +12,25 @@ namespace Bank.Models
         [Required(ErrorMessage = "Имя обязательно для ввода")]
         [StringLength(50, ErrorMessage = "Имя не должно превышать 50 символов")]
         [RegularExpression(@"^[а-яА-ЯёЁa-zA-Z]+$", ErrorMessage = "Имя должно содержать только буквы")]
-        public string? Имя { get; set; } = "Иван";
-
-
+        public string? Имя { get; set; }
         [Required(ErrorMessage = "Фамилия обязательна для ввода")]
         [StringLength(50, ErrorMessage = "Фамилия не должна превышать 50 символов")]
         [RegularExpression(@"^[а-яА-ЯёЁa-zA-Z]+$", ErrorMessage = "Фамилия должна содержать только буквы")]
-        public string? Фамилия { get; set; } = "Иванов";
-
-
+        public string? Фамилия { get; set; }
         [Required(ErrorMessage = "Дата рождения обязательна для ввода")]
         [DataType(DataType.Date, ErrorMessage = "Введите корректную дату")]
         [Display(Name = "Дата рождения")]
-        public DateTime ДатаРождения { get; set; } = DateTime.Today;
-
+        public DateTime ДатаРождения { get; set; }
 
         [Required]
         [Display(Name = "Номер телефона")]
         [RegularExpression(@"^\+?\d{10,15}$", ErrorMessage = "Номер телефона должен содержать от 10 до 15 цифр и может начинаться с '+'.")]
-        public string? PhoneNumber { get; set; } = "+79991234567";
+        public string? PhoneNumber { get; set; }
 
 
         [Required(ErrorMessage = "Обязательно введите почту")]
         [EmailAddress(ErrorMessage = "Неверный формат почты")]
-        public string? ЭлектроннаяПочта { get; set; } = "example@mail.com";
-
+        public string? ЭлектроннаяПочта { get; set; }
 
         [Required(ErrorMessage = "Пароль обязателен для заполнения.")]
         [DataType(DataType.Password)]
@@ -46,11 +39,11 @@ namespace Bank.Models
         public string? Пароль { get; set; }
 
 
+
+
         [ForeignKey("Отделение")]
         [Required]
         public int ID_Отделения { get; set; }
-
-
        // public virtual ОтделениеБанка Отделение { get; set; }
        //
        // public virtual ICollection<Счет> Счета { get; set; }

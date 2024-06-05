@@ -133,15 +133,11 @@
       "PackagePath": "staticwebassets\\img\\Shet\\balance\\5000.jpg"
     },
     {
-<<<<<<< HEAD
-      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\black.jpg",
+      "Id": "C:\\Users\\Admin\\source\\repos\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\black.jpg",
       "PackagePath": "staticwebassets\\img\\black.jpg"
     },
     {
-      "Id": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\home\\1.jpg",
-=======
       "Id": "C:\\Users\\Admin\\source\\repos\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\home\\1.jpg",
->>>>>>> 006b17be4bd6b4872de59c46ab5f8c7cffe9fc2e
       "PackagePath": "staticwebassets\\img\\home\\1.jpg"
     },
     {
