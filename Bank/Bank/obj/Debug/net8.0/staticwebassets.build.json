@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0TYt10sasincfjJVfQWWIBWUX3jx2Ybmz9wqOZ80hEo=",
+  "Hash": "GxTiaT79Ltpbqxt9ctU89eQlzynYjfydwIc+gS276IM=",
   "Source": "Bank",
   "BasePath": "_content/Bank",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\cont.css"
+    },
+    {
+      "Identity": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\css\\Emp.css",
+      "SourceId": "Bank",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\",
+      "BasePath": "_content/Bank",
+      "RelativePath": "css/Emp.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Emp.css"
     },
     {
       "Identity": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\css\\er.css",

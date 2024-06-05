@@ -12,33 +12,38 @@ h1 {
 
 .container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column; /* Элементы располагаются вертикально */
+    align-items: center;
     margin: 20px;
     padding: 0 10px;
 }
 
-    .container .branch {
-        position: relative;
-        margin: 10px;
-        display: block;
-        width: 8000px; /* Увеличенный размер */
-        height: 600px; /* Увеличенный размер */
-        overflow: hidden;
-        transition: transform 0.3s ease;
-        text-decoration: none;
-        color: inherit;
-    }
+.branch-container {
+    margin-bottom: 20px;
+}
+
+.container .branch {
+    position: relative;
+    margin: 10px;
+    display: block;
+    width: 100%; /* Полная ширина контейнера */
+    max-width: 1200px; /* Максимальная ширина для больших экранов */
+    height: 900px; /* Фиксированная высота изображений */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
 
 .branch img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Объект покрывает контейнер, сохраняя пропорции, при необходимости обрезая */
     transition: opacity 0.3s ease;
 }
 
 .branch:hover {
-    transform: scale(1.1); /* Немного увеличенное масштабирование */
+    transform: scale(1.05); /* Немного увеличенное масштабирование */
 }
 
     .branch:hover img {
@@ -54,34 +59,55 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background: rgba(0, 0, 0, 0.0);  Полупрозрачный фон */
+    background: rgba(0, 0, 0, 0); /* Изначально прозрачный фон */
     color: white;
     text-align: center;
     padding: 20px;
     transition: background 0.3s ease;
 }
 
-    .overlay .text {
-        z-index: 2; /* Для гарантии, что текст всегда сверху */
+.branch:hover .overlay {
+    background: rgba(0, 0, 0, 0.5); /* Затемнение фона при наведении */
+}
+
+.overlay .text {
+    z-index: 2; /* Для гарантии, что текст всегда сверху */
+}
+
+.overlay h2 {
+    margin: 0;
+    font-size: 2.5em; /* Размер текста для заголовка */
+}
+
+.overlay p {
+    margin: 0;
+    font-size: 1.5em; /* Размер текста для описания */
+}
+
+.employee-button {
+    margin-top: 10px;
+}
+
+    .employee-button a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 15px;
+        color: #fff;
+        background-color: #007bff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
     }
 
-    .overlay h2 {
-        margin: 0;
-        line-height: 1.2;
-        font-size: 2.5em; /* Увеличенный размер текста */
-    }
-
-    .overlay p {
-        margin: 0;
-        line-height: 1.2;
-        font-size: 1.5em; /* Увеличенный размер текста */
-    }
+        .employee-button a:hover {
+            background-color: #0056b3;
+        }
 
 /* Адаптивный дизайн */
 @media (max-width: 768px) {
     .container .branch {
-        width: 90%; /* Произвольно выбранный размер для мобильных устройств */
-        height: auto;
+        width: 100%; /* Полная ширина для мобильных устройств */
+        height: 300px; /* Уменьшенная высота для мобильных устройств */
     }
 
     .overlay h2 {
@@ -96,6 +122,7 @@ h1 {
 @media (max-width: 480px) {
     .container .branch {
         width: 100%;
+        height: 200px; /* Уменьшенная высота для маленьких экранов */
     }
 
     .overlay h2 {

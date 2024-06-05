@@ -3,48 +3,28 @@
     ViewData["Title"] = "Главная страница сайта";
 }
 
-
 <link rel="stylesheet" href="~/css/StyleHome.css" asp-append-version="true" />
-
-
 
 <body>
     <h1>Добро пожаловать! Хотите открыть счет? Сначала выберите отделение банка, к которому вы будете привязаны</h1>
     <div class="container">
         @foreach (var отделение in Model)
         {
-            <a href="/Client/Register?branchId=@отделение.ID_Отделения" class="branch">
-                <img src="@отделение.Photo" alt="Photo">
-                <div class="overlay">
-                    <div class="text">
-                        <h2>@отделение.НазваниеОтделения</h2>
-                        <p>@отделение.Адрес</p>
+            <div class="branch-container">
+                <a href="/Client/Register?branchId=@отделение.ID_Отделения" class="branch">
+                    <img src="@отделение.Photo" alt="Photo">
+                    <div class="overlay">
+                        <div class="text">
+                            <h2>@отделение.НазваниеОтделения</h2>
+                            <p>@отделение.Адрес</p>
+                        </div>
                     </div>
+                </a>
+                <div class="employee-button">
+                    <a href="/Branch/Employees?branchId=@отделение.ID_Отделения" class="btn-branch-employees">Сотрудники отделения</a>
                 </div>
-            </a>
+            </div>
         }
     </div>
 </body>
-<!-- 
-
-
-
-
-<h1>Вас приветствуют</h1>
-
-
-
-<div class="container">
-    <a href="https://vk.com/orangelos"><img src="img/andrew.jpg" alt="Andrew"></a>
-    <a href="https://vk.com/sgvvv"><img src="img/malika.jpg" alt="Malika"></a>
-    <a href="https://vk.com/aazelenov"><img src="img/Anton.jpg" alt="Anton"></a>
-</div>
-
-
-
--->
-
-
-
-
 
