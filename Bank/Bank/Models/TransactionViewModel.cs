@@ -6,7 +6,11 @@ namespace Bank.Models
    
         public class TransactionViewModel
         {
-            public int SourceAccountId { get; set; }
+        [Required]
+        [Display(Name = "Счет назначения")]
+        public string? DistId{ get; set; }
+
+        public int SourceAccountId { get; set; }
 
             [Required]
             [Display(Name = "Счет назначения")]

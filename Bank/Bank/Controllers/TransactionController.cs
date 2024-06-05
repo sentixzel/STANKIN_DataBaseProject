@@ -21,6 +21,11 @@ namespace Bank.Controllers
             return View();
 
         }
+        public IActionResult Index5()
+        {
+            return View();
+
+        }
         public IActionResult Index()
         {
             return View();
@@ -94,10 +99,10 @@ namespace Bank.Controllers
                 {
                     return RedirectToAction("Index1");
                 }
-                if ( model.Amount> destinationAccount.Баланс && model.TransactionType == "Deposit")
+                if (model.Amount > destinationAccount.Баланс && model.TransactionType == "Deposit")
                 {
                     return RedirectToAction("Index2");
-                    
+
                 }
                 if (sourceAccount == null || destinationAccount == null)
                 {
@@ -107,10 +112,6 @@ namespace Bank.Controllers
                 if (sourceAccount.Баланс < model.Amount && model.TransactionType == "Withdraw")
                 {
                     return RedirectToAction("Index");
-                    ModelState.AddModelError("", "Недостаточно средств на счете для выполнения транзакции.");
-                    // Повторно заполняем ClientAccounts
-                    model.ClientAccounts = new SelectList(_context.Счета.Where(a => a.ID_Клиента == sourceAccount.ID_Клиента).ToList(), "ID_Счета", "НомерСчета");
-                    return View(model);
                 }
 
                 if (model.TransactionType == "Withdraw")
@@ -139,13 +140,108 @@ namespace Bank.Controllers
                 return RedirectToAction("Profile", "Account", new { id = sourceAccount.ID_Клиента });
             }
             return RedirectToAction("Index", "Home");
-            //Console.WriteLine("ModelState.IsValid         000000000000000000000000000000000000000000000000000000000000000\n");
-            // Повторно заполняем ClientAccounts
-            var clientAccounts = _context.Счета.Where(a => a.ID_Клиента == model.SourceAccountId).ToList();
-            model.ClientAccounts = new SelectList(clientAccounts, "ID_Счета", "НомерСчета");
+        }
+        public IActionResult CreatA(int? accountId)
+        {
+
+
+            if (accountId == null)
+            {
+                return BadRequest("ID счета обязателен.");
+            }
+
+            var account = _context.Счета.Find(accountId);
+            if (account == null)
+            {
+                return NotFound("Счет не найден.");
+            }
+
+            var clientAccounts = _context.Счета.Where(a => a.ID_Клиента == account.ID_Клиента).ToList();
+
+            var viewModel = new TransactionViewModel
+            {
+                SourceAccountId = account.ID_Счета,
+                ClientAccounts = new SelectList(clientAccounts, "ID_Счета", "НомерСчета")
+            };
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreatA(TransactionViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                model.TransactionType = "Withdraw";
+                var sourceAccount = _context.Счета.FirstOrDefault(a => a.ID_Счета == model.SourceAccountId);
+                var destinationAccount = _context.Счета.FirstOrDefault(a => a.НомерСчета == model.DistId);
+
+                if (model.SourceAccountId == model.DestinationAccountId)
+                {
+                    return RedirectToAction("Index3");
+
+                }
+
+                if (model.Amount <= 0)
+                {
+                    return RedirectToAction("Index1");
+                }
+                //if (model.Amount > destinationAccount.Баланс && model.TransactionType == "Deposit")
+                //{
+                 //   return RedirectToAction("Index2");
+
+               // }
+                if (sourceAccount == null || destinationAccount == null)
+                {
+                    return RedirectToAction("Index5");
+                }
+
+                if (sourceAccount.Баланс < model.Amount && model.TransactionType == "Withdraw")
+                {
+                    return RedirectToAction("Index");
+                }
+
+                if (model.TransactionType == "Withdraw")
+                {
+                    sourceAccount.Баланс -= model.Amount;
+                    destinationAccount.Баланс += model.Amount;
+                }
+                //else if (model.TransactionType == "Deposit")
+               // {
+               //     sourceAccount.Баланс += model.Amount;
+                //    destinationAccount.Баланс -= model.Amount;
+               // }
+
+                var transaction = new Транзакция
+                {
+                    ID_Счета = model.SourceAccountId,
+                    ДатаТранзакции = DateTime.Now,
+                    ТипТранзакции = model.TransactionType,
+                    Сумма = model.Amount,
+                    Описание = model.Description
+                };
+
+                _context.Транзакции.Add(transaction);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction("Profile", "Account", new { id = sourceAccount.ID_Клиента });
+            }
 
             return View(model);
         }
-        
+
+
+
+
     }
-}
+
+
+
+
+
+
+
+
+ }
+
