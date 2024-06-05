@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Bank.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class initiate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
