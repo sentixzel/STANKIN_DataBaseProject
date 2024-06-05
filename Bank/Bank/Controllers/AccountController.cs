@@ -225,6 +225,11 @@ namespace Bank.Controllers
                     model.ПроцентнаяСтавка = 14;
                     model.ДатаОкончания = DateTime.Now;
                     model.ДатаОкончания = model.ДатаОкончания.AddMonths(60);
+                    model.СуммаКредита = model.СуммаКредита* Convert.ToDecimal(1.14);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
 
                 }
                 else
@@ -234,12 +239,16 @@ namespace Bank.Controllers
                   
                     model.ДатаОкончания = DateTime.Now;
                     model.ДатаОкончания = model.ДатаОкончания.AddMonths(48);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.18);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.18);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.18);
                 }
                 else
                 {
                     model.ПроцентнаяСтавка = 26;
                     model.ДатаОкончания = DateTime.Now;
                     model.ДатаОкончания = model.ДатаОкончания.AddMonths(12);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.26);
                 }
                 
 
@@ -296,6 +305,23 @@ namespace Bank.Controllers
         }
 
 
+        public IActionResult DeleteCredit(int creditId, int клиентId)
+        {
+            // tupa = creditId;
+           
+            var accountToDelete = _context.Кредиты.FirstOrDefault(a => a.ID_Кредита == creditId && a.Клиент.ID_Клиента == клиентId);
+
+            if (accountToDelete != null)
+            {
+                //var otherAccounts = _context.Кредиты.Where(a => a.Клиент.ID_Клиента == клиентId && a.ID_Счета != creditId).ToList();
+
+                _context.Кредиты.Remove(accountToDelete);
+                _context.SaveChanges();
+
+            }
+
+            return RedirectToAction("Profile", new { id = клиентId });
+        }
 
 
 

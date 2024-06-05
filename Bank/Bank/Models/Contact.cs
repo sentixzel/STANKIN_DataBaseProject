@@ -21,6 +21,7 @@ namespace Bank.Models
 
 
         [Required]
+        [Display(Name = "Введите телефон")]
         [RegularExpression(@"^\+?\d{10,15}$", ErrorMessage = "Номер телефона должен содержать от 10 до 15 цифр и может начинаться с '+'.")]
         public string Phone { get; set; }
 

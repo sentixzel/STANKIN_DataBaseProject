@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AajQmVYZVFcfNHwug/9pVQ8ADZOtn4xDxtUhlPtwV7Q=",
+  "Hash": "u3/qjQgE0HSC+/HG2/wDjf35Y55f9qMPTknCqeZ5/l8=",
   "Source": "Bank",
   "BasePath": "_content/Bank",
   "Mode": "Default",
@@ -433,6 +433,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\black.jpg",
+      "SourceId": "Bank",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\",
+      "BasePath": "_content/Bank",
+      "RelativePath": "img/black.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\black.jpg"
     },
     {
       "Identity": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\img\\Credit\\1.jpg",
