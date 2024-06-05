@@ -724,3 +724,9 @@ C:\Users\Arina\OneDrive\Документы\GitHub\STANKIN_DataBaseProject\Bank\B
 C:\Users\Arina\OneDrive\Документы\GitHub\STANKIN_DataBaseProject\Bank\Bank\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Arina\OneDrive\Документы\GitHub\STANKIN_DataBaseProject\Bank\Bank\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Arina\OneDrive\Документы\GitHub\STANKIN_DataBaseProject\Bank\Bank\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\Admin\source\repos\STANKIN_DataBaseProject\Bank\Bank\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Admin\source\repos\STANKIN_DataBaseProject\Bank\Bank\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Admin\source\repos\STANKIN_DataBaseProject\Bank\Bank\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Admin\source\repos\STANKIN_DataBaseProject\Bank\Bank\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Admin\source\repos\STANKIN_DataBaseProject\Bank\Bank\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Admin\source\repos\STANKIN_DataBaseProject\Bank\Bank\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
