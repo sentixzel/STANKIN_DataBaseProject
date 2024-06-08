@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Arina\\OneDrive\\Рабочий стол\\Bank\\Bank\\Bank.csproj": {}
+    "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Bank.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Arina\\OneDrive\\Рабочий стол\\Bank\\Bank\\Bank.csproj": {
+    "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Bank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Arina\\OneDrive\\Рабочий стол\\Bank\\Bank\\Bank.csproj",
+        "projectUniqueName": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Bank.csproj",
         "projectName": "Bank",
-        "projectPath": "C:\\Users\\Arina\\OneDrive\\Рабочий стол\\Bank\\Bank\\Bank.csproj",
+        "projectPath": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Bank.csproj",
         "packagesPath": "C:\\Users\\Arina\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Arina\\OneDrive\\Рабочий стол\\Bank\\Bank\\obj\\",
+        "outputPath": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Arina\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -74,6 +74,10 @@
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.20.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             }
           },
           "imports": [
