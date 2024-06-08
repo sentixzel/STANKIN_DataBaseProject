@@ -112,6 +112,7 @@ namespace Bank.Controllers
 
     // Метод для отображения формы открытия счета
     [HttpGet]
+        [Authorize]
         public IActionResult OpenS(int id)
         {
             // Вывод id для проверки
@@ -123,6 +124,7 @@ namespace Bank.Controllers
 
         // Метод для обработки открытия счета
         [HttpPost]
+        [Authorize]
         public IActionResult OpenAccount(OpenAccountViewModel model)
         {
             if (model.ID_Клиента == null || model.ID_Клиента == 0)
@@ -175,6 +177,7 @@ namespace Bank.Controllers
 
         // Метод для удаления счета
         [HttpPost]
+        
         public IActionResult DeleteAccount(int accountId, int клиентId)
         {
             tupa = accountId;

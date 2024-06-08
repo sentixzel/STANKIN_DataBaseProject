@@ -1,4 +1,5 @@
 ﻿using Bank.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Data;
@@ -27,7 +28,7 @@ namespace Bank.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         public IActionResult RepayC(int? creditId)
         {
 
@@ -62,6 +63,7 @@ namespace Bank.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> RepayC(Repay model)
         {
             if (!ModelState.IsValid)

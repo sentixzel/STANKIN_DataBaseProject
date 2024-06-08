@@ -52,7 +52,7 @@ namespace Bank.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         public IActionResult Create(int? accountId)
         {
 
@@ -81,6 +81,7 @@ namespace Bank.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create(TransactionViewModel model)
         {
             if (!ModelState.IsValid)
@@ -141,6 +142,7 @@ namespace Bank.Controllers
             }
             return RedirectToAction("Index", "Home");
         }
+        [Authorize]
         public IActionResult CreatA(int? accountId)
         {
 
@@ -169,6 +171,7 @@ namespace Bank.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> CreatA(TransactionViewModel model)
         {
             if (!ModelState.IsValid)
@@ -231,7 +234,7 @@ namespace Bank.Controllers
             return View(model);
         }
 
-
+        [Authorize]
         public IActionResult TransHistory(int clientId)
         {
             var transactions = _context.Транзакции
