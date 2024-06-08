@@ -22,6 +22,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     {
         options.LoginPath = "/Account/Login";
     });
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Bank.Models.Кредит>
+
+
+<link rel="stylesheet" href="~/css/Serv.css" asp-append-version="true" />
+<h2 class="section-title">Служебный кабинет</h2>
+
+<table class="custom-table">
+    <thead class="thead-custom">
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Дата Рождения</th>
+            <th>Телефон</th>
+            <th>Электронная Почта</th>
+            <th>Тип Кредита</th>
+            <th>Основная Сумма</th>
+            <th>Процентная Ставка</th>
+            <th>Дата Начала</th>
+            <th>Дата Окончания</th>
+            <th>Действия</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var credit in Model)
+        {
+            <tr>
+                <td>@credit.Клиент.Имя</td>
+                <td>@credit.Клиент.Фамилия</td>
+                <td>@credit.Клиент.ДатаРождения.ToShortDateString()</td>
+                <td>@credit.Клиент.PhoneNumber</td>
+                <td>@credit.Клиент.ЭлектроннаяПочта</td>
+                <td>@credit.ТипКредита</td>
+                <td>@credit.ОсновнаяСумма</td>
+                <td>@credit.ПроцентнаяСтавка</td>
+                <td>@credit.ДатаНачала.ToShortDateString()</td>
+                <td>@credit.ДатаОкончания.ToShortDateString()</td>
+                <td>
+                    <form asp-action="UpdateCreditStatus" method="post" class="inline-form">
+                        <input type="hidden" name="creditId" value="@credit.ID_Кредита" />
+                        <input type="hidden" name="status" value="Активный" />
+                        <input type="hidden" name="clientId" value="@credit.ID_Клиента" />
+                        <button type="submit" class="btn confirm-btn">Подтвердить</button>
+                    </form>
+                    <form asp-action="UpdateCreditStatus" method="post" class="inline-form">
+                        <input type="hidden" name="creditId" value="@credit.ID_Кредита" />
+                        <input type="hidden" name="status" value="Отказано" />
+                        <button type="submit" class="btn reject-btn">Отказать</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

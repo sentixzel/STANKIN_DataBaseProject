@@ -286,9 +286,9 @@ namespace Bank.Controllers
                 if (otherAccounts.Any())
                 {
                     // Переводим баланс на первый из "Кредитных" счетов
-                    otherAccounts.First().Баланс += model.СуммаКредита;
+                   // otherAccounts.First().Баланс += model.СуммаКредита;
 
-                    TempData["Message"] = "Кредит успешно взят, и сумма была переведена на кредитный счёт.";
+                    TempData["Message"] = "Кредит оформлен и находится на рассмотрении";
                 }
                 else
                 {
@@ -306,11 +306,7 @@ namespace Bank.Controllers
                     model.ДатаОкончания = DateTime.Now;
                     model.ДатаОкончания = model.ДатаОкончания.AddMonths(60);
                     account.ДатаОкончания = model.ДатаОкончания;
-                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
-                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
-                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
-                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
-                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal(1.14);
+                    model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal((1.14)* (1.14) * (1.14) * (1.14) * (1.14));
                     account.ОсновнаяСумма = model.СуммаКредита;
                 }
                 else
