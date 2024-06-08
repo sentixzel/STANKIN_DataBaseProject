@@ -232,6 +232,17 @@ namespace Bank.Controllers
         }
 
 
+        public IActionResult TransHistory(int clientId)
+        {
+            var transactions = _context.Транзакции
+                .Include(t => t.Счет)
+                .Where(t => t.Счет.ID_Клиента == clientId)
+                .ToList();
+
+            return View(transactions);
+        }
+
+
 
 
     }

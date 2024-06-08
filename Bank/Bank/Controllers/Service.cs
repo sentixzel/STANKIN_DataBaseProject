@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Bank.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Bank.Controllers
 {
@@ -23,6 +24,7 @@ namespace Bank.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult Login(string password)
         {
             string result = "123123123";
@@ -35,6 +37,7 @@ namespace Bank.Controllers
             return View("Login");
         }
 
+        [Authorize]
         public IActionResult ProfileServ()
         {
             var pendingCredits = _context.Кредиты
