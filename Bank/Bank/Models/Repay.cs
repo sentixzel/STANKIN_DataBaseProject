@@ -16,6 +16,7 @@ namespace Bank.Models
         [Display(Name = "Сумма погашения")]
         public decimal Amount { get; set; }
 
+        public string ТипСчета { get; set; }
         public SelectList ClientAccounts { get; set; }
 
     }

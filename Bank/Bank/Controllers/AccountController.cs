@@ -23,7 +23,10 @@ namespace Bank.Controllers
             _context = context ?? throw new ArgumentNullException(nameof(context));
             _passwordHasher = passwordHasher ?? throw new ArgumentNullException(nameof(passwordHasher));
         }
-
+        public IActionResult Index1()
+        {
+            return View();
+        }
         public IActionResult Index()
         {
             return View();
@@ -122,8 +125,6 @@ namespace Bank.Controllers
         [HttpPost]
         public IActionResult OpenAccount(OpenAccountViewModel model)
         {
-
-
             if (model.ID_Клиента == null || model.ID_Клиента == 0)
             {
                 ModelState.AddModelError("Login", "Не найден ID клиента.");
@@ -132,15 +133,22 @@ namespace Bank.Controllers
 
             var currentUser = _context.Клиенты.FirstOrDefault(c => c.ID_Клиента == model.ID_Клиента.Value);
 
-
             if (currentUser != null)
             {
                 var currentAccounts = _context.Счета.Where(a => a.Клиент.ID_Клиента == currentUser.ID_Клиента).ToList();
 
+                // Проверка на количество счетов
                 if (currentAccounts.Count >= 3)
                 {
                     ModelState.AddModelError("OpenAccount", "Вы не можете открыть больше 3 счетов.");
                     return View("OpenAccount", model);
+                }
+
+                // Проверка на количество кредитных счетов
+                if (model.ТипСчета == "Кредитный" && currentAccounts.Any(a => a.ТипСчета == "Кредитный"))
+                {
+                    ModelState.AddModelError("OpenAccount", "Вы не можете открыть больше 1 кредитного счета.");
+                    return View("Index1", model);
                 }
 
                 var account = new Счет
@@ -150,18 +158,21 @@ namespace Bank.Controllers
                     Баланс = model.НачальныйБаланс,
                     ДатаСоздания = DateTime.Now,
                     НомерСчета = GenerateAccountNumber()
-
                 };
 
                 _context.Счета.Add(account);
                 _context.SaveChanges();
+
                 return RedirectToAction("Profile", new { id = currentUser.ID_Клиента });
             }
 
             ModelState.AddModelError("OpenAccount", "Не удалось найти пользователя.");
             return View("OpenAccount", model);
         }
+
+        //---
         int tupa;
+
         // Метод для удаления счета
         [HttpPost]
         public IActionResult DeleteAccount(int accountId, int клиентId)
@@ -254,7 +265,7 @@ namespace Bank.Controllers
                     ДатаНачала = DateTime.Now,
                     ДатаОкончания = model.ДатаОкончания,
                     ПроцентнаяСтавка = model.ПроцентнаяСтавка,
-                    Статус="Активный"
+                    Статус="На рассмотрении"
                     // НомерСчета = GenerateAccountNumber()
                 };
 
@@ -268,26 +279,26 @@ namespace Bank.Controllers
                     return View("OpenCredit", model);
 
                 }
-                var otherAccounts = _context.Счета.Where(a => a.Клиент.ID_Клиента == model.ID_Клиента && a.ID_Счета != tupa).ToList();
+                var otherAccounts = _context.Счета
+    .Where(a => a.Клиент.ID_Клиента == model.ID_Клиента && a.ID_Счета != tupa && a.ТипСчета == "Кредитный")
+    .ToList();
 
                 if (otherAccounts.Any())
                 {
-                    // Переводим баланс на первый из доступных счетов
+                    // Переводим баланс на первый из "Кредитных" счетов
                     otherAccounts.First().Баланс += model.СуммаКредита;
 
-
-
-
-                    TempData["Message"] = "Кредит успешно взят, и сумма была переведена на счёт.";
+                    TempData["Message"] = "Кредит успешно взят, и сумма была переведена на кредитный счёт.";
                 }
                 else
                 {
                     model.Статус = "Отменен";
                     account.Статус = "Отменен";
                     _context.Кредиты.Add(account);
-                    
-                    TempData["Error"] = "Взять кредит не удалось, нет подходящих счетов";
+
+                    TempData["Error"] = "Взять кредит не удалось, нет подходящего кредитного счета.";
                 }
+
                 if (model.ТипКредита == "Долгосрочный  5 лет")
                 {
                     model.ПроцентнаяСтавка = 14;

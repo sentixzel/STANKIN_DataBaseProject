@@ -66,7 +66,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>ID Кредита</th>
                 <th>Тип Кредита</th>
                 <th>Основная Сумма</th>
                 <th>Процентная Ставка</th>
@@ -81,7 +80,6 @@
             @foreach (var кредит in Model.Кредиты)
             {
                 <tr>
-                    <td>@кредит.ID_Кредита</td>
                     <td>@кредит.ТипКредита</td>
                     <td>@кредит.ОсновнаяСумма</td>
                     <td>@кредит.ПроцентнаяСтавка</td>
@@ -89,7 +87,10 @@
                     <td>@кредит.ДатаОкончания</td>
                     <td>@кредит.Статус</td>
                     <td>
-                        <button class="btn-open-account" onclick="location.href='@Url.Action("RepayC", "Repay", new { creditId = кредит.ID_Кредита })';">Погасить</button>
+                        @if (кредит.Статус != "Погашен досрочно" && кредит.Статус != "Отменен")
+                        {
+                            <button class="btn-open-account" onclick="location.href='@Url.Action("RepayC", "Repay", new { creditId = кредит.ID_Кредита })';">Погасить</button>
+                        }
                     </td>
                     <td>
                         @if (кредит.Статус == "Погашен досрочно" || кредит.Статус == "Отменен")
@@ -109,4 +110,3 @@
         Взять кредит
     </button>
 </div>
-
