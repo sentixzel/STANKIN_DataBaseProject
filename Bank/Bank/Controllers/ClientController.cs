@@ -40,15 +40,41 @@ namespace Bank.Controllers
             {
                 try
                 {
-                    // Проверка, существует ли уже клиент с такой электронной почтой
                     var existingClient = _context.Клиенты
-                        .FirstOrDefault(c => c.ЭлектроннаяПочта == model.ЭлектроннаяПочта);
+           .FirstOrDefault(c => c.ЭлектроннаяПочта == model.ЭлектроннаяПочта || c.PhoneNumber == model.PhoneNumber);
+
+                    if (existingClient != null)
+                    {
+                        // Определяем, что уже занято: электронная почта или телефон
+                        if (existingClient.ЭлектроннаяПочта == model.ЭлектроннаяПочта)
+                        {
+                            ModelState.AddModelError("ЭлектроннаяПочта", "Электронная почта уже используется.");
+                        }
+                        if (existingClient.PhoneNumber == model.PhoneNumber)
+                        {
+                            ModelState.AddModelError("PhoneNumber", "Номер телефона уже используется.");
+                        }
+                        return View(model);
+                    }
+
 
                     if (existingClient != null)
                     {
                         ModelState.AddModelError("ЭлектроннаяПочта", "Электронная почта уже используется.");
                         return View(model);
                     }
+
+
+
+                    //PHONE
+                    var existingClient1 = _context.Клиенты
+                     .FirstOrDefault(c => c.PhoneNumber == model.PhoneNumber);
+                    if (existingClient != null)
+                    {
+                        ModelState.AddModelError("PhoneNumber", "Телефон уже был зарегистрирован");
+                        return View(model);
+                    }
+
 
                     // Генерация кода подтверждения и отправка письма
                     string smtpServer = "smtp.mail.ru";
@@ -139,11 +165,15 @@ namespace Bank.Controllers
                     return RedirectToAction("EndRegister", "Client");
                 }
 
+                TempData.Keep("ViewVerifyModel");
+                TempData.Keep("Kod");
                 ModelState.AddModelError("Verify", "Код не верный");
+                return View(model);
             }
             else
             {
                 ModelState.AddModelError(string.Empty, "Недостаточно данных в TempData.");
+
             }
 
             return View(model);

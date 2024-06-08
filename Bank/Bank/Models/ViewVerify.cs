@@ -46,7 +46,7 @@ namespace Bank.Models
 
         [Required(ErrorMessage = "Код обязателен для заполнения.")]
         [RegularExpression(@"^\d{4}$", ErrorMessage = "Код должен состоять ровно из 4 цифр.")]
-        public int Verify { get; set; }
+        public int? Verify { get; set; }
 
         [ForeignKey("Отделение")]
             [Required]
