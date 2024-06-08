@@ -13,7 +13,6 @@ using System.Threading.Tasks;
 
 namespace Bank.Controllers
 {
-   
     public class AccountController : Controller
     {
         private readonly BankContext _context;
@@ -25,8 +24,6 @@ namespace Bank.Controllers
             _passwordHasher = passwordHasher ?? throw new ArgumentNullException(nameof(passwordHasher));
         }
 
-        
-        //-----------
         public IActionResult Index()
         {
             return View();
@@ -66,10 +63,8 @@ namespace Bank.Controllers
             ModelState.AddModelError("", "Неверная электронная почта или пароль.");
             return View("Login");
         }
-       // [Authorize]
-      
 
-       [Authorize]
+        [Authorize]
         public IActionResult Profile()
         {
             var клиентId = int.Parse(User.Claims.First(c => c.Type == "ClientId").Value);
@@ -106,14 +101,14 @@ namespace Bank.Controllers
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login");
         }
-
-        //-----------
-
+    
 
 
-        // Метод для отображения формы открытия счета
-        //[Authorize]
-        [HttpGet]
+
+
+
+    // Метод для отображения формы открытия счета
+    [HttpGet]
         public IActionResult OpenS(int id)
         {
             // Вывод id для проверки
@@ -124,7 +119,6 @@ namespace Bank.Controllers
         }
 
         // Метод для обработки открытия счета
-        //[Authorize]
         [HttpPost]
         public IActionResult OpenAccount(OpenAccountViewModel model)
         {

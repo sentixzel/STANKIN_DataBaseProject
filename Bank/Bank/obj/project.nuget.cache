@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IJVDgYjuwD6p/yL9gYVuA3z25L6pbeTecOHcwQkPg3bS5gJDUNllv5DuaAphjf8HVcNVogDtr3FMzg9oVVVw6g==",
+  "dgSpecHash": "n+CAbd5/8mgTScu9opJU6RD0MZpD1Pn+OgWJ+XgOW41Wvm8Owy1fVnuCcPZEV1Z4KY4Xkrgu2VukQa+8CtYeLQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Arina\\OneDrive\\Документы\\GitHub\\STANKIN_DataBaseProject\\Bank\\Bank\\Bank.csproj",
+  "projectFilePath": "C:\\Users\\Arina\\OneDrive\\Рабочий стол\\Bank\\Bank\\Bank.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Arina\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Arina\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

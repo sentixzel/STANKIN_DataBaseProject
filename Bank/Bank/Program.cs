@@ -7,30 +7,21 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Authorization;
 var builder = WebApplication.CreateBuilder(args);
 
 /// Настройка Identity
 
+
+builder.Services.AddScoped<IPasswordHasher<Клиент>, PasswordHasher<Клиент>>();
+builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<BankContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("BankCS")));
 // Настройка аутентификации
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
         options.LoginPath = "/Account/Login";
     });
-
-builder.Services.AddControllersWithViews(options =>
-{
-    var policy = new AuthorizationPolicyBuilder()
-        .RequireAuthenticatedUser()
-        .Build();
-    options.Filters.Add(new AuthorizeFilter(policy));
-});
-builder.Services.AddScoped<IPasswordHasher<Клиент>, PasswordHasher<Клиент>>();
-builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<BankContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("BankCS")));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -46,46 +37,13 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
 
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "Home",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
-
-
-
-
-
-///////// Настройка аутентификации
-//////builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-//////    .AddCookie(options =>
-//////    {
-//////        options.LoginPath = "/Account/Login";
-//////    });
-
-//////builder.Services.AddControllersWithViews();
-
-
-//////if (!app.Environment.IsDevelopment())
-//////{
-//////    app.UseExceptionHandler("/Home/Error");
-//////    app.UseHsts();
-//////}
-
-//////app.UseHttpsRedirection();
-//////app.UseStaticFiles();
-
-//////app.UseRouting();
-
-//////// Используем аутентификацию и авторизацию
-//////app.UseAuthentication();
-//////app.UseAuthorization();
-
-//////app.MapControllerRoute(
-//////    name: "default",
-//////    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 
 app.Run();
