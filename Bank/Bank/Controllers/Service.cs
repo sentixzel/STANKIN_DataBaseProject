@@ -30,6 +30,7 @@ namespace Bank.Controllers
             string result = "123123123";
             if (result == password)
             {
+                HttpContext.Session.SetString("IsLoggedIn", "true");
                 return RedirectToAction("ProfileServ");
             }
 
@@ -37,9 +38,14 @@ namespace Bank.Controllers
             return View("Login");
         }
 
-        [Authorize]
         public IActionResult ProfileServ()
         {
+            // Проверка сессии
+            if (HttpContext.Session.GetString("IsLoggedIn") != "true")
+            {
+                return RedirectToAction("Index");
+            }
+
             var pendingCredits = _context.Кредиты
                 .Include(k => k.Клиент)
                 .Where(k => k.Статус == "На рассмотрении")
@@ -71,21 +77,14 @@ namespace Bank.Controllers
                 // Проверяем наличие счета и обновляем его баланс
                 if (creditAccount != null)
                 {
-
                     if (credit.ТипКредита == "Долгосрочный  5 лет")
                         creditAccount.Баланс += credit.ОсновнаяСумма / Convert.ToDecimal((1.14) * (1.14) * (1.14) * (1.14) * (1.14));
-
 
                     if (credit.ТипКредита == "Среднесрочный 3 года")
                         creditAccount.Баланс += credit.ОсновнаяСумма / Convert.ToDecimal((1.18) * (1.18) * (1.18));
 
                     if (credit.ТипКредита == "Краткосрочный 1 год")
                         creditAccount.Баланс += credit.ОсновнаяСумма / Convert.ToDecimal(1.26);
-
-
-
-
-
 
                     // Сохраняем изменения в контексте базы данных
                     await _context.SaveChangesAsync();
@@ -95,10 +94,5 @@ namespace Bank.Controllers
             // Перенаправляем пользователя на профиль
             return RedirectToAction("ProfileServ");
         }
-
-
-
-
-        //---
     }
 }
