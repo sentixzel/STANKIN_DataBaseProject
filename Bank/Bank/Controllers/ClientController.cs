@@ -29,6 +29,11 @@ namespace Bank.Controllers
 
             return View(model);
         }
+        public IActionResult Not()
+        {
+
+            return View();
+        }
 
 
         int kod;
@@ -110,7 +115,7 @@ namespace Bank.Controllers
                 }
             }
 
-            return View(model);
+            return RedirectToAction("Not");
         }
 
         [HttpGet]
