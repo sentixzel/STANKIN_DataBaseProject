@@ -5,36 +5,26 @@ using System.Net.Mail;
 using System.Net;
 
 namespace Bank.Controllers
-{
-   
-        public class ContactsController : Controller
+{   
+    public class ContactsController : Controller
+    {
+        private readonly ILogger<ContactsController> _logger;
+
+        public ContactsController(ILogger<ContactsController> logger)
         {
-            private readonly ILogger<ContactsController> _logger;
+            _logger = logger;
+        }
 
-            public ContactsController(ILogger<ContactsController> logger)
-            {
-                _logger = logger;
-            }
-
-            public IActionResult Index()
-            {
-                return View();
-            }
+        public IActionResult Index()
+        {
+            return View();
+        }
 
         [HttpPost]
         public IActionResult Check(Contact contact)
         {
             if (ModelState.IsValid)
             {
-
-
-
-
-
-
-
-
-
                 string smtpServer = "smtp.mail.ru";
                 int smtpPort = 587; // Обычно используется порт 587 для TLS
                 string smtpUsername = "arina_andrey2004@mail.ru";
@@ -65,6 +55,7 @@ namespace Bank.Controllers
                             Console.WriteLine($"Ошибка отправки сообщения: {ex.Message}");
                         }
                     }
+
                     using (MailMessage mailMessage = new MailMessage())
                     {
                         mailMessage.From = new MailAddress(smtpUsername);
@@ -84,7 +75,6 @@ namespace Bank.Controllers
                         }
                     }
                 }
-
                 return RedirectToAction("ThankYou");
             }
             return View("Index");
@@ -96,10 +86,10 @@ namespace Bank.Controllers
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-            public IActionResult Error()
-            {
-                return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-            }
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
+}
 

@@ -15,9 +15,7 @@ namespace Bank.Controllers
 
         public IActionResult Employees(int branchId)
         {
-            var employees = _context.Сотрудники
-                .Where(e => e.ID_Отделения == branchId)
-                .ToList();
+            var employees = _context.Сотрудники.Where(e => e.ID_Отделения == branchId).ToList();
 
             return View(employees);
         }

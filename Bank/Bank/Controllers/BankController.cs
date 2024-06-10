@@ -28,7 +28,7 @@ namespace Bank.Controllers
 			return View();
 		}
 
-		// GET: BankController/Details/5
+		// GET: BankController/Details/
 		public async Task<ActionResult<Клиент>> Details(int id)
 		{
 			var клиент = await _context.Клиенты.FindAsync(id);
@@ -59,7 +59,7 @@ namespace Bank.Controllers
 			return View(клиент);
 		}
 
-		// GET: BankController/Edit/5
+		// GET: BankController/Edit/
 		public async Task<ActionResult> Edit(int id)
 		{
 			var клиент = await _context.Клиенты.FindAsync(id);
@@ -70,7 +70,7 @@ namespace Bank.Controllers
 			return View(клиент);
 		}
 
-		// POST: BankController/Edit/5
+		// POST: BankController/Edit/
 		[HttpPost]
 		[ValidateAntiForgeryToken]
 		public async Task<ActionResult> Edit(int id, [Bind("КлиентID,Имя,Фамилия,Отчество,ДатаРождения")] Клиент клиент)
@@ -103,7 +103,7 @@ namespace Bank.Controllers
 			return View(клиент);
 		}
 
-		// GET: BankController/Delete/5
+		// GET: BankController/Delete/
 		public async Task<ActionResult> Delete(int id)
 		{
 			var клиент = await _context.Клиенты.FindAsync(id);
@@ -114,7 +114,7 @@ namespace Bank.Controllers
 			return View(клиент);
 		}
 
-		// POST: BankController/Delete/5
+		// POST: BankController/Delete/
 		[HttpPost, ActionName("Delete")]
 		[ValidateAntiForgeryToken]
 		public async Task<ActionResult> DeleteConfirmed(int id)

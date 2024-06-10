@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 using Bank;
 namespace Bank.Controllers
 {
-
-
     public class HomeController : Controller
     {
-
         private readonly BankContext _context;
 
         public HomeController(BankContext context)
@@ -35,9 +32,6 @@ namespace Bank.Controllers
         {
             return View();
         }
-
-
-
     }
 
 

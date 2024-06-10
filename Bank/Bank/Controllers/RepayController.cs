@@ -21,7 +21,6 @@ namespace Bank.Controllers
             return View();
         }
 
-
         private readonly BankContext _context;
 
         public RepayController(BankContext context)
@@ -73,10 +72,10 @@ namespace Bank.Controllers
                 var destinationAccount = _context.Счета.FirstOrDefault(a => a.ID_Счета == model.DestinationAccountId);
 
                 //if (model.SourceCreditId == model.DestinationAccountId)
-               // {
-              //      return RedirectToAction("Index3");
-
+                //{
+                //    return RedirectToAction("Index3");
                 //}
+
                 if(destinationAccount.Баланс< model.Amount)
                 {
                     return RedirectToAction("Index2");
@@ -86,33 +85,30 @@ namespace Bank.Controllers
                     return RedirectToAction("Index");
                 }
 
-              //  if (model.Amount > destinationAccount.Баланс && model.TransactionType == "Deposit")
-               // {
+                //if (model.Amount > destinationAccount.Баланс && model.TransactionType == "Deposit")
+                //{
                 //    return RedirectToAction("Index2");
-
-               // }
+                //}
                 //if (sourceAccount == null || destinationAccount == null)
-               // {
+                //{
                 //    return NotFound("Счет не найден.");
-               // }
+                //}
 
                 if (sourceAccount.ОсновнаяСумма < model.Amount)
                 {
                     return RedirectToAction("Index1");              
                 }
 
-
-                    sourceAccount.ОсновнаяСумма -= model.Amount;
-                    destinationAccount.Баланс -= model.Amount;
+                sourceAccount.ОсновнаяСумма -= model.Amount;
+                destinationAccount.Баланс -= model.Amount;
                 
-
                 var transaction = new ПлатежПоКредиту
                 {
                     ID_Кредита = model.SourceCreditId,
                     ДатаПлатежа = DateTime.Now,
                     //ТипТранзакции = model.TransactionType,
                     СуммаПлатежа = model.Amount,
-                   // Описание = model.Description
+                    //Описание = model.Description
                 };
                 if (sourceAccount.ОсновнаяСумма == 0)
                 {
@@ -126,14 +122,10 @@ namespace Bank.Controllers
             }
             return RedirectToAction("Login", "Account");
             //Console.WriteLine("ModelState.IsValid         000000000000000000000000000000000000000000000000000000000000000\n");
-            // Повторно заполняем ClientAccounts
-           // var clientAccounts = _context.Счета.Where(a => a.ID_Клиента == model.SourceAccountId).ToList();
-          //  model.ClientAccounts = new SelectList(clientAccounts, "ID_Счета", "НомерСчета");
-
+            //Повторно заполняем ClientAccounts
+            //var clientAccounts = _context.Счета.Where(a => a.ID_Клиента == model.SourceAccountId).ToList();
+            //model.ClientAccounts = new SelectList(clientAccounts, "ID_Счета", "НомерСчета");
             //return View(model);
         }
-
-
-
     }
 }

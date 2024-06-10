@@ -45,11 +45,7 @@ namespace Bank.Controllers
             {
                 return RedirectToAction("Index");
             }
-
-            var pendingCredits = _context.Кредиты
-                .Include(k => k.Клиент)
-                .Where(k => k.Статус == "На рассмотрении")
-                .ToList();
+            var pendingCredits = _context.Кредиты.Include(k => k.Клиент).Where(k => k.Статус == "На рассмотрении").ToList();
 
             return View(pendingCredits);
         }
@@ -71,8 +67,7 @@ namespace Bank.Controllers
             if (status == "Активный")
             {
                 // Получаем кредитный счет клиента
-                var creditAccount = _context.Счета
-                    .FirstOrDefault(a => a.Клиент.ID_Клиента == clientId && a.ТипСчета == "Кредитный");
+                var creditAccount = _context.Счета.FirstOrDefault(a => a.Клиент.ID_Клиента == clientId && a.ТипСчета == "Кредитный");
 
                 // Проверяем наличие счета и обновляем его баланс
                 if (creditAccount != null)

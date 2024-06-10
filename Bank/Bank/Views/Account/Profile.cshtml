@@ -128,4 +128,10 @@
     <button class="btn-open-account" onclick="location.href='@Url.Action("OpenC", "Account", new { id = Model.Клиент.ID_Клиента })';">
         Взять кредит
     </button>
+    <div class="btn-open-account">
+        <form asp-action="Logout" method="post">
+            <button type="submit">Выйти</button>
+        </form>
+    </div>
+</div>
 </div>

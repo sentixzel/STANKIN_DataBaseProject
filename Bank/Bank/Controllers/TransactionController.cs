@@ -11,52 +11,51 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System;
+
 namespace Bank.Controllers
 {
-
     public class TransactionController : Controller
     {
         public IActionResult Index4()
         {
             return View();
-
         }
+
         public IActionResult Index5()
         {
             return View();
-
         }
+
         public IActionResult Index()
         {
             return View();
-
         }
+
         public IActionResult Index1()
         {
             return View();
-
         }
+
         public IActionResult Index2()
         {
             return View();
-
         }
+
         public IActionResult Index3()
         {
             return View();
-
         }
+
         private readonly BankContext _context;
 
         public TransactionController(BankContext context)
         {
             _context = context;
         }
+
         [Authorize]
         public IActionResult Create(int? accountId)
         {
-
-            
             if (accountId == null)
             {
                 return BadRequest("ID счета обязателен.");
@@ -93,18 +92,18 @@ namespace Bank.Controllers
                 if (model.SourceAccountId == model.DestinationAccountId)
                 {
                     return RedirectToAction("Index3");
-
                 }
 
                 if (model.Amount <= 0)
                 {
                     return RedirectToAction("Index1");
                 }
+
                 if (model.Amount > destinationAccount.Баланс && model.TransactionType == "Deposit")
                 {
                     return RedirectToAction("Index2");
-
                 }
+
                 if (sourceAccount == null || destinationAccount == null)
                 {
                     return NotFound("Счет не найден.");
@@ -145,8 +144,6 @@ namespace Bank.Controllers
         [Authorize]
         public IActionResult CreatA(int? accountId)
         {
-
-
             if (accountId == null)
             {
                 return BadRequest("ID счета обязателен.");
@@ -183,7 +180,6 @@ namespace Bank.Controllers
                 if (model.SourceAccountId == model.DestinationAccountId)
                 {
                     return RedirectToAction("Index3");
-
                 }
 
                 if (model.Amount <= 0)
@@ -211,10 +207,10 @@ namespace Bank.Controllers
                     destinationAccount.Баланс += model.Amount;
                 }
                 //else if (model.TransactionType == "Deposit")
-               // {
-               //     sourceAccount.Баланс += model.Amount;
+                //{
+                //    sourceAccount.Баланс += model.Amount;
                 //    destinationAccount.Баланс -= model.Amount;
-               // }
+                //}
 
                 var transaction = new Транзакция
                 {
@@ -244,18 +240,5 @@ namespace Bank.Controllers
 
             return View(transactions);
         }
-
-
-
-
     }
-
-
-
-
-
-
-
-
  }
-

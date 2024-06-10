@@ -31,7 +31,6 @@ namespace Bank.Controllers
         }
         public IActionResult Not()
         {
-
             return View();
         }
 
@@ -45,8 +44,7 @@ namespace Bank.Controllers
             {
                 try
                 {
-                    var existingClient = _context.Клиенты
-           .FirstOrDefault(c => c.ЭлектроннаяПочта == model.ЭлектроннаяПочта || c.PhoneNumber == model.PhoneNumber);
+                    var existingClient = _context.Клиенты.FirstOrDefault(c => c.ЭлектроннаяПочта == model.ЭлектроннаяПочта || c.PhoneNumber == model.PhoneNumber);
 
                     if (existingClient != null)
                     {
@@ -62,24 +60,19 @@ namespace Bank.Controllers
                         return View(model);
                     }
 
-
                     if (existingClient != null)
                     {
                         ModelState.AddModelError("ЭлектроннаяПочта", "Электронная почта уже используется.");
                         return View(model);
                     }
 
-
-
                     //PHONE
-                    var existingClient1 = _context.Клиенты
-                     .FirstOrDefault(c => c.PhoneNumber == model.PhoneNumber);
+                    var existingClient1 = _context.Клиенты.FirstOrDefault(c => c.PhoneNumber == model.PhoneNumber);
                     if (existingClient != null)
                     {
                         ModelState.AddModelError("PhoneNumber", "Телефон уже был зарегистрирован");
                         return View(model);
                     }
-
 
                     // Генерация кода подтверждения и отправка письма
                     string smtpServer = "smtp.mail.ru";
@@ -143,8 +136,7 @@ namespace Bank.Controllers
         {
             if (TempData.TryGetValue("Kod", out object kodFromTempData))
             {
-                int kod = (int)kodFromTempData;
-                
+                int kod = (int)kodFromTempData;                
 
                 if (model.Verify == kod)
                 {
@@ -158,7 +150,6 @@ namespace Bank.Controllers
                         ЭлектроннаяПочта = model.ЭлектроннаяПочта,
                         ID_Отделения = model.ID_Отделения,
                         PhoneNumber = model.PhoneNumber
-
                     };
 
                     // Хэширование пароля
@@ -178,39 +169,14 @@ namespace Bank.Controllers
             else
             {
                 ModelState.AddModelError(string.Empty, "Недостаточно данных в TempData.");
-
             }
 
             return View(model);
         }
 
-
-
-
-
-
-
         public IActionResult EndRegister()
         {
             return View();
         }
-
-
-
-
-
-
-
     }
-
-   
-
-
-       
-
-
-    }
-
-
-
-
+}

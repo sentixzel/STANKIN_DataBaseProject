@@ -99,19 +99,16 @@ namespace Bank.Controllers
             return View(модель);
         }
 
+        [HttpPost]
         public IActionResult Logout()
         {
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login");
         }
-    
-
-
-
 
 
     // Метод для отображения формы открытия счета
-    [HttpGet]
+        [HttpGet]
         [Authorize]
         public IActionResult OpenS(int id)
         {
@@ -176,8 +173,7 @@ namespace Bank.Controllers
         int tupa;
 
         // Метод для удаления счета
-        [HttpPost]
-        
+        [HttpPost]        
         public IActionResult DeleteAccount(int accountId, int клиентId)
         {
             tupa = accountId;
@@ -214,13 +210,6 @@ namespace Bank.Controllers
             return new string(Enumerable.Repeat("0123456789", 20).Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
-
-
-
-
-
-
-
         // Метод для отображения формы открытия 
         [HttpGet]
         public IActionResult OpenC(int id)
@@ -232,16 +221,10 @@ namespace Bank.Controllers
             return View(model);
         }
 
-
-
-
-
         // Метод для обработки открытия кредита
         [HttpPost]
         public IActionResult OpenCredit(OpenСreditModel model)
         {
-
-
             if (model.ID_Клиента == null || model.ID_Клиента == 0)
             {
                 ModelState.AddModelError("Login", "Не найден ID клиента.");
@@ -250,16 +233,9 @@ namespace Bank.Controllers
 
             var currentUser = _context.Клиенты.FirstOrDefault(c => c.ID_Клиента == model.ID_Клиента.Value);
 
-
             if (currentUser != null)
             {
                 var currentAccounts = _context.Кредиты.Where(a => a.Клиент.ID_Клиента == currentUser.ID_Клиента).ToList();
-
-                
-
-                
-                
-
                 var account = new Кредит
                 {
                     Клиент = currentUser,
@@ -282,15 +258,12 @@ namespace Bank.Controllers
                     return View("OpenCredit", model);
 
                 }
-                var otherAccounts = _context.Счета
-    .Where(a => a.Клиент.ID_Клиента == model.ID_Клиента && a.ID_Счета != tupa && a.ТипСчета == "Кредитный")
-    .ToList();
+                var otherAccounts = _context.Счета.Where(a => a.Клиент.ID_Клиента == model.ID_Клиента && a.ID_Счета != tupa && a.ТипСчета == "Кредитный").ToList();
 
                 if (otherAccounts.Any())
                 {
                     // Переводим баланс на первый из "Кредитных" счетов
-                   // otherAccounts.First().Баланс += model.СуммаКредита;
-
+                    // otherAccounts.First().Баланс += model.СуммаКредита;
                     TempData["Message"] = "Кредит оформлен и находится на рассмотрении";
                 }
                 else
@@ -312,8 +285,7 @@ namespace Bank.Controllers
                     model.СуммаКредита = model.СуммаКредита * Convert.ToDecimal((1.14)* (1.14) * (1.14) * (1.14) * (1.14));
                     account.ОсновнаяСумма = model.СуммаКредита;
                 }
-                else
-                    if (model.ТипКредита == "Среднесрочный 3 года")
+                else if (model.ТипКредита == "Среднесрочный 3 года")
                 {
                     model.ПроцентнаяСтавка = 18;
                     account.ПроцентнаяСтавка = model.ПроцентнаяСтавка;
@@ -369,4 +341,3 @@ namespace Bank.Controllers
 
     }
 }
-
