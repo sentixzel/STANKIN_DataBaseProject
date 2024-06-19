@@ -103,11 +103,10 @@ namespace Bank.Controllers
         public IActionResult Logout()
         {
             HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Login");
+            return RedirectToAction("Index");
         }
 
-
-    // Метод для отображения формы открытия счета
+        // Метод для отображения формы открытия счета
         [HttpGet]
         [Authorize]
         public IActionResult OpenS(int id)

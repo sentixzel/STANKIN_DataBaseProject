@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bwfqLW1IJQgzKh3F9HEE4F4kwDNvwm86DBgAtTYhKBg=",
+  "Hash": "qeQhj5//E57vrhwDAf64FIssCCz6qXvvZAUiXmntaPo=",
   "Source": "Bank",
   "BasePath": "_content/Bank",
   "Mode": "Default",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\er.css"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\source\\repos\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\css\\Exit.css",
+      "SourceId": "Bank",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\source\\repos\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\",
+      "BasePath": "_content/Bank",
+      "RelativePath": "css/Exit.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Exit.css"
     },
     {
       "Identity": "C:\\Users\\Admin\\source\\repos\\STANKIN_DataBaseProject\\Bank\\Bank\\wwwroot\\css\\java.css",
